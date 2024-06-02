@@ -229,11 +229,11 @@ a {
 
 .hero-text {
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.5);
-    padding: -5px;
+    padding: 20px;
     border-radius: 10px;
 }
 
