@@ -77,7 +77,15 @@ header .nav-items ul li .nav-item a span {
     border-radius: 4px 0 0 4px;
     outline: none;
 }
-
+.search-section1 .search-btn {
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #ff5722;
+    color: #ffffff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
 .search-section .search-btn {
     padding: 15px 20px;
     font-size: 18px;
