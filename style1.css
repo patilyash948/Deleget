@@ -73,6 +73,7 @@ header .nav-items ul li .nav-item a span {
     margin-bottom: 40px;
 }
 .search-section1 input[type="text"] {
+    margin: 100%;
     width: 100%;
     padding: 10px;
     font-size: 18px;
