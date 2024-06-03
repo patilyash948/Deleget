@@ -277,7 +277,7 @@ header .nav-items ul li .nav-item a span {
   .right .items .nav-item {
     display: flex;
     align-items: center;
-    padding-left: 28px;
+    padding-left: 20px;
     position: relative;
     height: 80px;
     cursor: pointer;
