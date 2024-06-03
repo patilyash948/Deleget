@@ -90,11 +90,11 @@ header .nav-items ul li .nav-item a span {
 }
 .search-section1 .search-btn {
     padding: 13px 15px;
-    font-size: 15px;
+    font-size: 9px;
     border: none;
     background-color: #ff5722;
     color: #ffffff;
-    border-radius: 0 9px 4px 0;
+    border-radius: 0 9px 9px 0;
     cursor: pointer;
 }
 .search-section .search-btn {
