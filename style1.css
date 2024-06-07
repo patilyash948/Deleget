@@ -6,14 +6,7 @@
     flex-wrap: wrap;
 }
 
-.dishes1 {
-   padding: 40px 20px;
-    text-align: center;
-    display: flex;
-    
-    flex-wrap: wrap;
-    
-}
+
 
 .dishes h2 {
     font-size: 2em;
