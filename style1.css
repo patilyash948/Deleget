@@ -40,6 +40,23 @@
     margin: 0;
 }
 
+.dish-description {
+    padding: 1em 0;
+}
+
+.dish-description h3 {
+    margin: 0.5em 0;
+}
+
+.dish-description p {
+    margin: 0;
+    font-size: 0.9em;  /* Adjust the font size */
+    line-height: 1.5;  /* Adjust the line height for better readability */
+    color: #666;       /* Adjust the text color if needed */
+    padding: 0.5em 0;  /* Add padding to the paragraph */
+}
+
+
 
 
 
