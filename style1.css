@@ -497,8 +497,21 @@ a {
     padding: 40px 20px;
     background-color: #f9f9f9;
     text-align:center;
-    display: flex;
+
+     font-size: 2em;
+    width: 100%;
+    margin-bottom: 1em;
+    
 }
+
+.features-section h2 {
+
+     font-size: 2em;
+    width: 100%;
+    margin-bottom: 1em;
+    
+}
+
 
 .features-container {
     display: flex;
