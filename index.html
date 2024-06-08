@@ -2,125 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Deleget</title>
-    <link rel="icon" sizes="192x192" href="deleget.jpg">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deleget</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="nav">
-            <div class="left">
-                <a href="#home" class="logo">
-                    <img src="deleget11.png" alt="Logo" height="60">
-                </a>
-                <div class="location-div">
-                    <span class="other">Other</span>
-                    <span class="location">Pune, India</span>
-                    <span class="arrow-down"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
+        <div class="container">
+            <div class="logo">
+                <img src="deleget-logo.png" alt="Deleget Logo">
             </div>
-            <div class="right">
-                <div class="search-section1">
-                    <input type="text" placeholder="Search for restaurants or dishes">
-                    <button class="search-btn"><i class="fa fa-search"></i></button>
-                </div>
-                <ul class="items">
-                    <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
-                    <li><a href="#">Career</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">SignUp</a></li>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Search for restaurants or dishes">
+                <button><i class="fas fa-search"></i></button>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero-section">
-            <img src="deleget111.png" alt="Hero Image" class="hero-image">
-            <div class="hero-text">
+        <section class="hero">
+            <div class="container">
                 <h1>Explore the World with Deleget</h1>
                 <p>Find the best places to visit, eat, and stay</p>
             </div>
         </section>
 
-        <section class="dishes">
-            <h2>Our Popular Dishes</h2>
-            <div class="dish-item">
-                <img src="Dal Bati.jpg" alt="Dal Baati" class="dish-image">
-                <div class="dish-description">
-                    <h3>Dal Baati</h3>
-                </div>
-            </div>
-            <div class="dish-item">
-                <img src="dishes3.jpg" alt="Rice Plate" class="dish-image">
-                <div class="dish-description">
-                    <h3>Rice Plate</h3>
-                </div>
-            </div>
-            <div class="dish-item">
-                <img src="dishes4.jpg" alt="Pav Bhaji" class="dish-image">
-                <div class="dish-description">
-                    <h3>Pav Bhaji</h3>
-                </div>
-            </div>
-            <div class="dish-item">
-                <img src="dishes.jpg" alt="Shev Bhaji" class="dish-image">
-                <div class="dish-description">
-                    <h3>Shev Bhaji</h3>
-                </div>
-            </div>
-        </section>
-
-        <section class="features-section">
-            <h2>Our Services</h2>
-            <div class="features-container">
-                <div class="feature-item">
-                    <i class="fa-solid fa-utensils"></i>
-                    <h2>Restaurants</h2>
-                    <p>Discover top-rated restaurants around you.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-hotel"></i>
-                    <h2>Hotels</h2>
-                    <p>Find the best deals on hotels and accommodations.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-map-signs"></i>
-                    <h2>Attractions</h2>
-                    <p>Explore must-see attractions in any city.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="restaurants-section">
-            <h2>Featured Restaurants</h2>
-            <div class="restaurants-list">
-                <div class="restaurant">
-                    <img src="1.jpg" alt="Restaurant 1">
-                    <h3>Restaurant 1</h3>
-                    <p>Delicious food from the best chefs in the city.</p>
-                </div>
-                <div class="restaurant">
-                    <img src="2.jpg" alt="Restaurant 2">
-                    <h3>Restaurant 2</h3>
-                    <p>Experience culinary excellence at Restaurant 2.</p>
-                </div>
-                <div class="restaurant">
-                    <img src="3.jpg" alt="Restaurant 3">
-                    <h3>Restaurant 3</h3>
-                    <p>Taste the best dishes crafted with love.</p>
+        <section class="popular-dishes">
+            <div class="container">
+                <h2>Our Popular Dishes</h2>
+                <div class="dish-list">
+                    <div class="dish-item">
+                        <img src="dish1.jpg" alt="Dish 1">
+                        <h3>Dish 1</h3>
+                    </div>
+                    <div class="dish-item">
+                        <img src="dish2.jpg" alt="Dish 2">
+                        <h3>Dish 2</h3>
+                    </div>
+                    <div class="dish-item">
+                        <img src="dish3.jpg" alt="Dish 3">
+                        <h3>Dish 3</h3>
+                    </div>
+                    <div class="dish-item">
+                        <img src="dish4.jpg" alt="Dish 4">
+                        <h3>Dish 4</h3>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
+        <div class="container">
             <p>&copy; 2024 Deleget. All rights reserved.</p>
-            <ul class="footer-links">
+            <ul>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
                 <li><a href="#">Contact Us</a></li>
