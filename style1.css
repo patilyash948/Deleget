@@ -47,7 +47,7 @@ body {
 
 .search-section1 {
     display: flex;
-    align-items: center;
+    align-items: auto;
 }
 
 .search-section1 input[type="text"] {
