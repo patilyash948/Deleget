@@ -49,6 +49,8 @@ body {
 .right {
     display: flex;
     align-items: center;
+     margin-left: 200px;
+    margin-right: 20px; /* Adjust the right margin */
 }
 
 .search-section1 {
