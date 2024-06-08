@@ -432,7 +432,7 @@ a {
 
 .right {
     display: flex;
-    align-items: left;
+    align-items: center;
 }
 
 .right .nav-links {
