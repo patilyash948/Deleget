@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deleget</title>
     <link rel="icon" sizes="192x192" href="deleget.jpg">
     <link rel="stylesheet" href="style1.css" type="text/css" />
@@ -14,37 +15,34 @@
     <div class="main-container">
         <!-- Navbar Section -->
         <header class="navbar">
-            <div class="global-nav">
-                <div class="nav">
-                    <div class="left">
-                        <a href="#home" class="logo">
-                            <img src="deleget11.png" alt="Logo" height="60">
-                        </a>
-                        <div class="location-div">
-                            <span class="other">Other</span>
-                            <span class="location">Pune, India</span>
-                            <span class="arrow-down"><i class="fa-solid fa-angle-down"></i></span>
-                        </div>
+            <div class="nav">
+                <div class="left">
+                    <a href="#home" class="logo">
+                        <img src="deleget11.png" alt="Logo" height="60">
+                    </a>
+                    <div class="location-div">
+                        <span class="other">Other</span>
+                        <span class="location">Pune, India</span>
+                        <span class="arrow-down"><i class="fa-solid fa-angle-down"></i></span>
                     </div>
-                    <div class="right">
-                        <div class="search-section1">
-                            <input type="text" placeholder="Search for restaurants or dishes" />
-                            <button class="search-btn"><i class="fa fa-search"></i></button>
-                        </div>
-                        <ul class="items">
-                            <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">SignUp</a></li>
-                        </ul>
+                </div>
+                <div class="right">
+                    <div class="search-section1">
+                        <input type="text" placeholder="Search for restaurants or dishes" />
+                        <button class="search-btn"><i class="fa fa-search"></i></button>
                     </div>
+                    <ul class="items">
+                        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">SignUp</a></li>
+                    </ul>
                 </div>
             </div>
         </header>
-        <br><br><br>
         <!-- Main Content Section -->
         <main class="content">
-            <!-- Top banner with an image and a text -->
+            <!-- Hero Section -->
             <div class="hero-section">
                 <img src="deleget111.png" alt="Hero Image" class="hero-image">
                 <div class="hero-text">
@@ -53,36 +51,38 @@
                 </div>
             </div>
             <!-- Dishes Section -->
-            <div class="dishes">
+            <section class="dishes">
                 <h2>Our Popular Dishes</h2>
-                <div class="dish-item">
-                    <img src="Dal Bati.jpg" alt="Dish 1" class="dish-image">
-                    <div class="dish-description">
-                        <h3>Dal Baati</h3>
+                <div class="dish-grid">
+                    <div class="dish-item">
+                        <img src="Dal Bati.jpg" alt="Dal Baati" class="dish-image">
+                        <div class="dish-description">
+                            <h3>Dal Baati</h3>
+                        </div>
+                    </div>
+                    <div class="dish-item">
+                        <img src="dishes3.jpg" alt="Rice Plate" class="dish-image">
+                        <div class="dish-description">
+                            <h3>Rice Plate</h3>
+                        </div>
+                    </div>
+                    <div class="dish-item">
+                        <img src="dishes4.jpg" alt="Pav Bhaji" class="dish-image">
+                        <div class="dish-description">
+                            <h3>Pav Bhaji</h3>
+                        </div>
+                    </div>
+                    <div class="dish-item">
+                        <img src="dishes.jpg" alt="Shev Bhaji" class="dish-image">
+                        <div class="dish-description">
+                            <h3>Shev Bhaji</h3>
+                        </div>
                     </div>
                 </div>
-                <div class="dish-item">
-                    <img src="dishes3.jpg" alt="Dish 2" class="dish-image">
-                    <div class="dish-description">
-                        <h3>Rice Plate</h3>
-                    </div>
-                </div>
-                <div class="dish-item">
-                    <img src="dishes4.jpg" alt="Dish 3" class="dish-image">
-                    <div class="dish-description">
-                        <h3>Pav Bhaji</h3>
-                    </div>
-                </div>
-                <div class="dish-item">
-                    <img src="dishes.jpg" alt="Dish 4" class="dish-image">
-                    <div class="dish-description">
-                        <h3>Shev Bhaji</h3>
-                    </div>
-                </div>
-            </div>
+            </section>
             <!-- Features Section -->
-            <div class="features-section">
-                <h2>Our Services</h2><br><br>
+            <section class="features-section">
+                <h2>Our Services</h2>
                 <div class="features-container">
                     <div class="feature-item">
                         <i class="fa-solid fa-utensils"></i>
@@ -100,47 +100,40 @@
                         <p>Explore must-see attractions in any city.</p>
                     </div>
                 </div>
-            </div>
+            </section>
+            <!-- Restaurants Section -->
+            <section class="restaurants-section">
+                <h2>Featured Restaurants</h2>
+                <div class="restaurants-list">
+                    <div class="restaurant">
+                        <img src="1.jpg" alt="Restaurant 1" />
+                        <h3>Restaurant 1</h3>
+                        <p>Delicious food from the best chefs in the city.</p>
+                    </div>
+                    <div class="restaurant">
+                        <img src="2.jpg" alt="Restaurant 2" />
+                        <h3>Restaurant 2</h3>
+                        <p>Experience culinary excellence at Restaurant 2.</p>
+                    </div>
+                    <div class="restaurant">
+                        <img src="3.jpg" alt="Restaurant 3" />
+                        <h3>Restaurant 3</h3>
+                        <p>Taste the best dishes crafted with love.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer Section -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>&copy; 2024 Deleget. All rights reserved.</p>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </footer>
         </main>
-        <!-- Restaurants Section -->
-        <div class="restaurants-section">
-            <h2>Featured Restaurants</h2>
-            <div class="restaurants-list">
-                <div class="restaurant">
-                    <img src="1.jpg" alt="Restaurant Image" />
-                    <h3>Restaurant 1</h3>
-                    <p>Delicious food from the best chefs in the city.</p>
-                </div>
-                <div class="restaurant">
-                    <img src="2.jpg" alt="Restaurant Image" />
-                    <h3>Restaurant 2</h3>
-                    <p>Experience culinary excellence at Restaurant 2.</p>
-                </div>
-                <div class="restaurant">
-                    <img src="3.jpg" alt="Restaurant Image" />
-                    <h3>Restaurant 3</h3>
-                    <p>Taste the best dishes crafted with love.</p>
-                </div>
-            </div>
-        </div>
-        <div class="main-content">
-            <h1>Discover Great Places to Eat!</h1>
-            <div class="search-section">
-                <input type="text" placeholder="Search for restaurants or dishes" />
-                <button class="search-btn"><i class="fa fa-search"></i> Search</button>
-            </div>
-        </div>
-        <!-- Footer Section -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p>&copy; 2024 Deleget. All rights reserved.</p>
-                <ul class="footer-links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-        </footer>
     </div>
 </body>
 </html>
