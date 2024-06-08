@@ -49,7 +49,7 @@ body {
 .right {
     display: flex;
     align-items: center;
-     margin-left: 300px;
+     margin-left: 500px;
     margin-right: 20px; /* Adjust the right margin */
 }
 
