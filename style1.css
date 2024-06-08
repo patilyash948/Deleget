@@ -257,3 +257,48 @@ body {
     text-decoration: none;
     font-size: 14px;
 }
+
+
+
+
+
+
+/* Add media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .left {
+        margin-right: auto; /* Push right content to the right side */
+    }
+    
+    .right {
+        margin-left: auto; /* Push left content to the left side */
+        margin-right: 0; /* Remove right margin */
+    }
+    
+    .search-section1 {
+        margin-left: auto; /* Push search box to the left side */
+        margin-right: auto; /* Push search box to the right side */
+    }
+    
+    .search-section1 input[type="text"] {
+        width: 100%; /* Make input full width */
+    }
+    
+    .items {
+        display: none; /* Hide navigation items */
+    }
+    
+    .location-div {
+        margin-left: auto; /* Push location to the left side */
+        margin-right: 20px; /* Add right margin */
+    }
+    
+    .nav {
+        justify-content: space-between; /* Adjust alignment */
+    }
+    
+    .navbar {
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+/* Add remaining styles here */
