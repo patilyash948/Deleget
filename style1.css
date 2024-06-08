@@ -113,6 +113,7 @@ body {
 .hero-section {
     position: relative;
     text-align: center;
+    background-color: #000; /* Set background color to black */
 }
 
 .hero-image {
