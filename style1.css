@@ -145,8 +145,8 @@ header {
 
 .restaurants-list {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .restaurant {
@@ -161,26 +161,51 @@ header {
     border-radius: 10px;
 }
 
-.footer {
+footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
 }
 
-.footer .footer-links {
+.footer-links {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
 }
 
-.footer .footer-links li {
+.footer-links li {
     margin: 0 10px;
 }
 
-.footer .footer-links li a {
+.footer-links li a {
     color: #fff;
     text-decoration: none;
     font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav .search-section1 input[type="text"] {
+        width: 200px;
+    }
+
+    .dish-item, .feature-item, .restaurant {
+        flex: 0 0 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav .search-section1 input[type="text"] {
+        width: 150px;
+    }
+
+    .dish-item, .feature-item, .restaurant {
+        flex: 0 0 100%;
+    }
+
+    .hero-text {
+        margin-top: -150px;
+    }
 }
