@@ -48,7 +48,7 @@ body {
 
 .right {
     display: flex;
-   align-items: center;
+   align-items: left;
 
      margin-left: 20px;
     margin-right: 100px; /* Adjust the right margin */
