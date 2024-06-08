@@ -51,10 +51,11 @@ body {
 }
 
 .search-section1 input[type="text"] {
-    width: 250px;
+    width: 300px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
+    text-align: left;
 }
 
 .search-btn {
