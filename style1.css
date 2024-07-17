@@ -280,6 +280,7 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
+    display: none;
     background-color: #fff;
     border-bottom: 1px solid #e6e6e6;
     padding: 10px 20px;
@@ -528,3 +529,11 @@ body {
 }
 
 }
+ @media (max-width: 550px) {
+            .menu-item {
+                flex: 1 1 calc(100% - 20px);
+            }
+            .welcome {
+                font-size: 1.5em;
+            }
+        }
