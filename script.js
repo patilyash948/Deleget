@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         menuItems.appendChild(newMenuItem);
     });
+     function toggleMobileMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+            const btn = document.querySelector('.mobile-menu-btn');
+            btn.classList.toggle('active');
+        }
 
     deleteDishButton.addEventListener('click', () => {
         const menuItems = document.getElementById('menuItems');
