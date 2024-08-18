@@ -131,6 +131,30 @@ nav ul li a:hover {
 }
 
 
+/* Dishes Section */
+.dishes {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.dish-grid {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.dish-item {
+    margin: 10px;
+
+}
+
+.dish-image {
+    width: 100%;
+    height: 150px;
+}
+
+
 
 
 
