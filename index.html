@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deleget</title>
     <link rel="icon" sizes="192x192" href="deleget.jpg">
     <link rel="stylesheet" href="style1.css" type="text/css" />
@@ -31,19 +31,19 @@
                         <input type="text" placeholder="Search for restaurants or dishes" />
                         <button class="search-btn"><i class="fa fa-search"></i></button>
                     </div>
-                    <nav>
-                    <ul class="items">
-<li><a href="index.html#home">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="Gallery.html">Gallery</a></li>
-                    <li><a href="Career.html">Career</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="SignUp.html">Signup</a></li>
-                    <li><a href="cart.html"><i class="fas fa-shopping-cart" id="cart-icon1" ></i></a></li> <!-- Cart icon added -->
-                    </ul>
-                         </nav>
-                             <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
-                             <div class="mobile-menu-btn1"><a href="cart.html"><i class="fas fa-shopping-cart" id="cart-icon"></i></a>
+                    <nav id="nav-menu">
+                        <ul class="items">
+                            <li><a href="index.html#home">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="Gallery.html">Gallery</a></li>
+                            <li><a href="Career.html">Career</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="SignUp.html">Signup</a></li>
+                            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
+                    <div class="mobile-menu-btn1"><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></div>
                 </div>
             </div>
         </header>
@@ -142,5 +142,12 @@
             </footer>
         </main>
     </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
