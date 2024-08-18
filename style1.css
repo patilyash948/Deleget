@@ -243,6 +243,7 @@ body {
 /* Restaurants Section */
 .restaurants-section {
     padding: 20px;
+    text-align: center;
 }
 
 .restaurants-list {
