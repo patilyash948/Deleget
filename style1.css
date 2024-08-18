@@ -146,7 +146,7 @@ nav ul li a:hover {
     margin: 10px;
 }
 
-.dish-image {
+dish-image {
     width: 100%;
     height: 2400px; /* Increased height for desktop view */
     object-fit: cover; /* Ensures the image covers the area without distortion */
