@@ -116,15 +116,18 @@ nav ul li a:hover {
 }
 
 
-/* Hero Section */
+.content {
+    margin-top: 80px;
+}
+
 .hero-section {
     position: relative;
     text-align: center;
-    color: white;
+    background-color: #000;
 }
 
 .hero-image {
-    width: 400px;
+    width: 100%;
     height: auto;
 }
 
@@ -133,29 +136,138 @@ nav ul li a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #fff;
 }
-.items {
+
+.hero-text h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 24px;
+}
+
+.dishes {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.dishes h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.dish-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dish-item {
+    width: 22%;
+    margin-bottom: 20px;
+}
+
+.dish-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dish-description h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.features-section {
+    background-color: #ffffff;
+    padding: 50px 20px;
+}
+
+.features-section h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    width: 28%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feature-item i {
+    font-size: 50px;
+    color: #ff5722;
+    margin-bottom: 10px;
+}
+
+.feature-item h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.restaurants-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.restaurants-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.restaurants-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.restaurant {
+    width: 28%;
+    margin-bottom: 20px;
+}
+
+.restaurant img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .footer-links {
     list-style: none;
     display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
 
-.items li {
-    margin-right: 15px;
+.footer .footer-links li {
+    margin: 0 10px;
 }
 
-.items li a {
+.footer .footer-links li a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
-    font-size: 16px;
+    font-size: 14px;
 }
-
-.items li a:hover {
-    color: #ff5722;
-}
-
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .search-section1 {
