@@ -129,9 +129,14 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .mobile-menu-btn, .mobile-menu-btn1 {
-        display: block;
-    }
+    /* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
     
     .search-section1 {
         display: none;
