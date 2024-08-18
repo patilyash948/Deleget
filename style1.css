@@ -172,29 +172,6 @@ nav ul {
         display: none;
     }
 
-    .items {
-        list-style-type: none; /* Removes the default black dots */
-        display: none;
-        flex-direction: column;
-        background-color: #fff;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        border: 1px solid #e6e6e6;
-    }
-
-    .items.active {
-        display: flex;
-    }
-
-    .items li {
-        margin: 10px 0;
-        list-style: none; /* Ensure no bullets are shown in mobile view */
-    }
-}
 
 
 /* Hero Section */
