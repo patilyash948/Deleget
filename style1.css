@@ -131,8 +131,9 @@ body {
 @media (max-width: 768px) {
 
 
-     .mobile-menu-btn, .mobile-menu-btn1 {
+     .mobile-menu-btn, .mobile-menu-btn1  {
         display: block;
+         
     }
 
     
