@@ -107,6 +107,15 @@ nav ul li a:hover {
     display: none;
 }
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+
 /* Hero Section */
 .hero-section {
     position: relative;
@@ -115,7 +124,7 @@ nav ul li a:hover {
 }
 
 .hero-image {
-    width: 100%;
+    width: 400px;
     height: auto;
 }
 
