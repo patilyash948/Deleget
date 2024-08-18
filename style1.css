@@ -139,7 +139,7 @@ body {
                 cursor: pointer;
                 z-index: 1500;
                 color: #fff;
-                font-size: 0.5em;
+                font-size: 1.5em;
                 margin-right: 20px; /* Adjust the right margin to create space */
             }
             .mobile-menu-btn.active {
