@@ -121,22 +121,24 @@ body {
         display: none;
     }
 
-    .items {
-        display: none;
-        flex-direction: column;
-        background-color: #fff;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        border: 1px solid #e6e6e6;
-    }
+    /* Mobile Menu Styles */
+.items {
+    list-style: none;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+}
 
-    .items.active {
-        display: flex;
-    }
+.items.active {
+    display: flex; /* Show menu when active */
+}
 
     .items li {
         margin: 10px 0;
