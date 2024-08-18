@@ -134,7 +134,7 @@ body {
     .mobile-menu-btn {
                 display: block;
                 position: absolute;
-                top: 20px;
+                top: 22px;
                 right: 40px;
                 cursor: pointer;
                 z-index: 1500;
