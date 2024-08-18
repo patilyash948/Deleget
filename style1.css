@@ -139,7 +139,7 @@ body {
                 cursor: pointer;
                 z-index: 1500;
                 color: #fff;
-                font-size: 1.1em;
+                font-size: 0.5em;
                 margin-right: 20px; /* Adjust the right margin to create space */
             }
             .mobile-menu-btn.active {
@@ -186,7 +186,7 @@ body {
 
 .hero-image {
     width: 100%;
-    height: 200px;
+    height: 250px;
 }
 
 .hero-text {
