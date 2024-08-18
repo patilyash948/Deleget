@@ -317,7 +317,7 @@ nav ul li a:hover {
 
     .dish-item {
         width: 60%; /* Set to almost full width */
-        margin-bottom: 20px; /* Add margin for spacing */
+        margin: 10px;
     }
 
     .dish-image {
