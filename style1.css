@@ -174,7 +174,7 @@ nav ul {
 
 
     .items {
-        list-style-type: none; /* Removes the default black dots */
+        
         display: none;
         flex-direction: column;
         background-color: #fff;
