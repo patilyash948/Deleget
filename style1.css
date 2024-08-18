@@ -300,30 +300,32 @@ nav ul li a:hover {
         font-size: 0.8em;
     }
 .dishes {
-    padding: 20px;
-    text-align: center;
-}
+        padding: 20px;
+        text-align: center;
+    }
 
-.dishes h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
+    .dishes h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
 
-.dish-grid {
-    display: flex;
-    flex-wrap: wrap;
-    
-}
+    .dish-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center align items */
+    }
 
-.dish-item {
-    margin: 20px;
+    .dish-item {
+        width: 90%; /* Set to almost full width */
+        margin-bottom: 20px; /* Add margin for spacing */
+    }
 
-}
-
-.dish-image {
-    width: 4000px;
-    height: 200px;
-}
+    .dish-image {
+        width: 100%; /* Set width to 100% of the container */
+        height: auto; /* Let the height adjust automatically */
+        object-fit: cover; /* Ensure the image covers the area without distortion */
+        border-radius: 10px; /* Optional: Adds rounded corners */
+    }
 
 .dish-description h3 {
     margin-top: 10px;
