@@ -312,6 +312,7 @@ nav ul li a:hover {
     .dish-grid {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         
     }
 
