@@ -208,12 +208,12 @@ body {
 .dish-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    
 }
 
 .dish-item {
     margin: 10px;
-    text-align: center;
+
 }
 
 .dish-image {
