@@ -118,64 +118,7 @@ nav ul li a:hover {
 
 
 
-.hero-section {
-    position: relative;
-    text-align: center;
-    background-color: #000;
-}
 
-.hero-image {
-    width: 100%;
-    height: auto;
-}
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-}
-
-.hero-text h1 {
-    font-size: 48px;
-    margin: 0;
-}
-
-.hero-text p {
-    font-size: 24px;
-}
-
-.dishes {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.dishes h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-.dish-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.dish-item {
-    width: 22%;
-    margin-bottom: 20px;
-}
-
-.dish-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.dish-description h3 {
-    margin-top: 10px;
-    font-size: 18px;
-}
 
 .features-section {
     background-color: #ffffff;
