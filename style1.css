@@ -157,6 +157,22 @@ nav ul li a:hover {
         text-align: center;
         margin: 10px 0;
     }
+
+
+    .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 22px;
+                right: 40px;
+                cursor: pointer;
+                z-index: 1500;
+                color: #fff;
+                font-size: 1.5em;
+                margin-right: 20px; /* Adjust the right margin to create space */
+            }
+            .mobile-menu-btn.active {
+                color: #4CAF50;
+            }
 }
 
 /* Hero Section */
