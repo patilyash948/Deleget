@@ -312,12 +312,12 @@ nav ul li a:hover {
     .dish-grid {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        
         
     }
 
     .dish-item {
-        width: 60%; /* Set to almost full width */
+        width: 40%; /* Set to almost full width */
         
     }
 
