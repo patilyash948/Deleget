@@ -173,6 +173,7 @@ nav ul {
     }
 
     .items {
+        list-style-type: none; /* Removes the default black dots */
         display: none;
         flex-direction: column;
         background-color: #fff;
@@ -191,6 +192,7 @@ nav ul {
 
     .items li {
         margin: 10px 0;
+        list-style: none; /* Ensure no bullets are shown in mobile view */
     }
 }
 
