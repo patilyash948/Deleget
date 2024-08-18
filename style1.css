@@ -306,7 +306,7 @@ nav ul li a:hover {
 
     .dishes h2 {
         font-size: 24px;
-        
+        margin-bottom: 20px;
     }
 
     .dish-grid {
@@ -323,8 +323,7 @@ nav ul li a:hover {
     .dish-image {
         width: 100%; /* Set width to 100% of the container */
         height: auto; /* Let the height adjust automatically */
-        object-fit: cover; /* Ensure the image covers the area without distortion */
-        border-radius: 10px; /* Optional: Adds rounded corners */
+        
     }
 
 .dish-description h3 {
