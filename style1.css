@@ -118,7 +118,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero-image {
     width: 100%;
-    height: 5000px; /* Increased height for desktop view */
+    height: auto;
 }
 
 .hero-text {
