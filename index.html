@@ -167,24 +167,29 @@
         }
     </style>
 <script>
-
-
-    
-        function updatePrice() {
-            const nameSelect = document.getElementById('name');
-            const timeOfDaySelect = document.getElementById('time_of_day');
-            const priceInput = document.getElementById('price');
-            
-            const selectedOption = nameSelect.options[nameSelect.selectedIndex];
-            const timeOfDay = timeOfDaySelect.value;
+    function updatePrice() {
+        const nameSelect = document.getElementById('name');
+        const timeOfDaySelect = document.getElementById('time_of_day');
+        const priceInput = document.getElementById('price');
         
-            let price = selectedOption.getAttribute(`data-${timeOfDay.toLowerCase()}`);
-            priceInput.value = price;
-        }
+        const selectedOption = nameSelect.options[nameSelect.selectedIndex];
+        const timeOfDay = timeOfDaySelect.value;
+    
+        let price = selectedOption.getAttribute(`data-${timeOfDay.toLowerCase()}`);
+        priceInput.value = price;
+    }
 
-        function handleFormSubmission(event) {
-            event.preventDefault();
-            
+    function handleFormSubmission(event) {
+        event.preventDefault();
+
+        const nameSelect = document.getElementById('name');
+        const selectedOption = nameSelect.options[nameSelect.selectedIndex];
+        const predefinedPassword = selectedOption.getAttribute('data-password');
+        
+        const enteredPassword = prompt("Please enter your password:");
+
+        if (enteredPassword === predefinedPassword) {
+            // Proceed with form submission if the password is correct
             const form = event.target;
             const formData = new FormData(form);
 
@@ -205,26 +210,29 @@
                 console.error('Error:', error);
                 alert('There was an error. Please try again.');
             });
+        } else {
+            alert('Incorrect password. Please try again.');
         }
-
-        // Function to open the modal
-function openPopup() {
-    document.getElementById("dailyUpdateModal").style.display = "block";
-}
-
-// Function to close the modal
-function closeModal() {
-    document.getElementById("dailyUpdateModal").style.display = "none";
-}
-
-// Close the modal if user clicks outside the modal content
-window.onclick = function(event) {
-    const modal = document.getElementById("dailyUpdateModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
     }
-}
-    </script>
+
+    // Function to open the modal
+    function openPopup() {
+        document.getElementById("dailyUpdateModal").style.display = "block";
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById("dailyUpdateModal").style.display = "none";
+    }
+
+    // Close the modal if user clicks outside the modal content
+    window.onclick = function(event) {
+        const modal = document.getElementById("dailyUpdateModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
     
 </head>
@@ -303,8 +311,8 @@ window.onclick = function(event) {
                 <label for="name">Name:</label>
                  <select name="name" id="name" required onchange="updatePrice()">
                 <option value="" disabled selected>Select a name</option>
-                <option value="मोहन पाटील" data-morning="60" data-evening="60">मोहन पाटील</option>
-                <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60">सुमित कुलकर्णी</option>
+                <option value="मोहन पाटील" data-morning="60" data-evening="60" data-password="1234">मोहन पाटील</option>
+            <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60" data-password="abcd">सुमित कुलकर्णी</option>
                 <option value="चेतन ढाके" data-morning="60" data-evening="60">चेतन ढाके</option>
                 <option value="अजय साळुंखे" data-morning="60" data-evening="60">अजय साळुंखे</option>
                 <option value="प्रतिक चौधरी" data-morning="60" data-evening="70">प्रतिक चौधरी</option>
