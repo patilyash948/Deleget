@@ -89,7 +89,7 @@
             cursor: pointer;
         }
     </style>
- <script>
+<script>
         function updatePrice() {
             const nameSelect = document.getElementById('name');
             const timeOfDaySelect = document.getElementById('time_of_day');
@@ -103,9 +103,8 @@
         }
 
         function handleFormSubmission(event) {
-            event.preventDefault();  // Prevent the form from submitting normally
+            event.preventDefault();
             
-            // Perform the AJAX request
             const form = event.target;
             const formData = new FormData(form);
 
@@ -118,8 +117,8 @@
                 if (result.trim() === 'success') {
                     alert('Record added successfully!');
                     setTimeout(() => {
-                        window.location.href = 'success.html';  // Redirect to another page after a delay
-                    }, 1000);  // Delay of 1 second (1000 milliseconds)
+                        window.location.href = 'success.html';
+                    }, 1000);
                 } else {
                     alert('There was an error. Please try again.');
                 }
@@ -128,6 +127,24 @@
                 console.error('Error:', error);
                 alert('There was an error. Please try again.');
             });
+        }
+
+        // Function to open the modal
+        function openModal() {
+            document.getElementById("dailyUpdateModal").style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("dailyUpdateModal").style.display = "none";
+        }
+
+        // Close the modal if user clicks outside the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById("dailyUpdateModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 
