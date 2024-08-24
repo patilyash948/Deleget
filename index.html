@@ -233,10 +233,11 @@
             modal.style.display = "none";
         }
     }
-      // Function to populate current date and time
+      /
+    // Function to display current date and time directly in the popup
     function populateCurrentDateTime() {
         const currentDateTime = new Date();
-        document.getElementById('current_date_time').value = currentDateTime.toLocaleString(); // Set date and time value
+        document.getElementById('current_date_time_display').innerHTML = currentDateTime.toLocaleString(); // Display current date and time
     }
 </script>
 
@@ -312,6 +313,8 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h1>Daily Updates Form</h1>
+         <!-- Display current date and time here -->
+            <p id="current_date_time_display"></p>
         <form action="https://banjoscafe.in/process1.php" method="post" onsubmit="handleFormSubmission(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
