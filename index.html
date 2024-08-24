@@ -179,16 +179,28 @@
             // Add more users and passwords as needed
             "Unknown": "0000"
         };
-        function updatePrice() {
+         function updatePriceAndDetails() {
             const nameSelect = document.getElementById('name');
             const timeOfDaySelect = document.getElementById('time_of_day');
             const priceInput = document.getElementById('price');
-            
+            const passwordInput = document.getElementById('password');
+            const dateTimeDisplay = document.getElementById('date_time');
+
             const selectedOption = nameSelect.options[nameSelect.selectedIndex];
             const timeOfDay = timeOfDaySelect.value;
-        
+
             let price = selectedOption.getAttribute(`data-${timeOfDay.toLowerCase()}`);
             priceInput.value = price;
+
+            // Get the selected user's name
+            const selectedName = nameSelect.value;
+            
+            // Update the password field with the user's pre-set password
+            passwordInput.value = userPasswords[selectedName] || "Unknown";
+
+            // Get the current date and time
+            const currentDateTime = new Date().toLocaleString();
+            dateTimeDisplay.value = currentDateTime;
         }
 
      function handleFormSubmission(event) {
