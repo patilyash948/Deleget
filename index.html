@@ -191,9 +191,13 @@
             priceInput.value = price;
         }
 
-        function handleFormSubmission(event) {
-            event.preventDefault();
-            
+     function handleFormSubmission(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const passwordInput = document.getElementById('password').value;
+
+        if (passwordInput === passwords[name]) {
             const form = event.target;
             const formData = new FormData(form);
 
@@ -205,12 +209,11 @@
             .then(result => {
                 if (result.trim() === 'success') {
                     alert('Record added successfully!');
-                    
                 } else {
                     alert('There was an error. Please try again.');
                 }
             })
-             .catch(error => {
+            .catch(error => {
                 console.error('Error:', error);
                 alert('There was an error. Please try again.');
             });
@@ -218,7 +221,6 @@
             alert('Incorrect password! Please try again.');
         }
     }
-
         // Function to open the modal
 function openPopup() {
     document.getElementById("dailyUpdateModal").style.display = "block";
