@@ -233,6 +233,11 @@
             modal.style.display = "none";
         }
     }
+      // Function to populate current date and time
+    function populateCurrentDateTime() {
+        const currentDateTime = new Date();
+        document.getElementById('current_date_time').value = currentDateTime.toLocaleString(); // Set date and time value
+    }
 </script>
 
     
@@ -359,6 +364,11 @@
             <div class="form-group">
                     <label for="entered_password">Password:</label>
                     <input type="password" id="entered_password" name="entered_password" required>
+                </div>
+  <!-- Visible input for current date and time -->
+                <div class="form-group">
+                    <label for="current_date_time">Current Date and Time:</label>
+                    <input type="text" name="current_date_time" id="current_date_time" readonly>
                 </div>
 
             
