@@ -204,35 +204,38 @@
         }
 
      function handleFormSubmission(event) {
-        event.preventDefault();
+    event.preventDefault(); // Prevent default form submission
 
-        const name = document.getElementById('name').value;
-        const passwordInput = document.getElementById('password').value;
+    const name = document.getElementById('name').value;  // Get selected name
+    const passwordInput = document.getElementById('password').value;  // Get entered password
 
-        if (passwordInput === passwords[name]) {
-            const form = event.target;
-            const formData = new FormData(form);
+    // Check if the entered password matches the one associated with the selected user
+    if (passwordInput === passwords[name]) {
+        // Password is correct, proceed with form submission
+        const form = event.target;
+        const formData = new FormData(form);
 
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(result => {
-                if (result.trim() === 'success') {
-                    alert('Record added successfully!');
-                } else {
-                    alert('There was an error. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            if (result.trim() === 'success') {
+                alert('Record added successfully!');
+            } else {
                 alert('There was an error. Please try again.');
-            });
-        } else {
-            alert('Incorrect password! Please try again.');
-        }
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error. Please try again.');
+        });
+    } else {
+        // Password is incorrect, show an alert
+        alert('Incorrect password! Please try again.');
     }
+}
         // Function to open the modal
 function openPopup() {
     document.getElementById("dailyUpdateModal").style.display = "block";
