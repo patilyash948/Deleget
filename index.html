@@ -179,63 +179,43 @@
             // Add more users and passwords as needed
             "Unknown": "0000"
         };
-         function updatePriceAndDetails() {
+        function updatePrice() {
             const nameSelect = document.getElementById('name');
             const timeOfDaySelect = document.getElementById('time_of_day');
             const priceInput = document.getElementById('price');
-            const passwordInput = document.getElementById('password');
-            const dateTimeDisplay = document.getElementById('date_time');
-
+            
             const selectedOption = nameSelect.options[nameSelect.selectedIndex];
             const timeOfDay = timeOfDaySelect.value;
-
+        
             let price = selectedOption.getAttribute(`data-${timeOfDay.toLowerCase()}`);
             priceInput.value = price;
-
-            // Get the selected user's name
-            const selectedName = nameSelect.value;
-            
-            // Update the password field with the user's pre-set password
-            passwordInput.value = userPasswords[selectedName] || "Unknown";
-
-            // Get the current date and time
-            const currentDateTime = new Date().toLocaleString();
-            dateTimeDisplay.value = currentDateTime;
         }
 
-     function handleFormSubmission(event) {
-    event.preventDefault(); // Prevent default form submission
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
 
-    const name = document.getElementById('name').value;  // Get selected name
-    const passwordInput = document.getElementById('password').value;  // Get entered password
-
-    // Check if the entered password matches the one associated with the selected user
-    if (passwordInput === passwords[name]) {
-        // Password is correct, proceed with form submission
-        const form = event.target;
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(result => {
-            if (result.trim() === 'success') {
-                alert('Record added successfully!');
-            } else {
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                if (result.trim() === 'success') {
+                    alert('Record added successfully!');
+                    
+                } else {
+                    alert('There was an error. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
                 alert('There was an error. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error. Please try again.');
-        });
-    } else {
-        // Password is incorrect, show an alert
-        alert('Incorrect password! Please try again.');
-    }
-}
+            });
+        }
+
         // Function to open the modal
 function openPopup() {
     document.getElementById("dailyUpdateModal").style.display = "block";
@@ -330,7 +310,7 @@ window.onclick = function(event) {
         <form action="https://banjoscafe.in/process1.php" method="post" onsubmit="handleFormSubmission(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
-                 <select name="name" id="name" required onchange="updatePriceAndDetails()">
+                 <select name="name" id="name" required onchange="updatePrice()">
                 <option value="" disabled selected>Select a name</option>
                 <option value="मोहन पाटील" data-morning="60" data-evening="60">मोहन पाटील</option>
                 <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60">सुमित कुलकर्णी</option>
