@@ -171,63 +171,62 @@
         const nameSelect = document.getElementById('name');
         const timeOfDaySelect = document.getElementById('time_of_day');
         const priceInput = document.getElementById('price');
-        const passwordField = document.getElementById('password');
+        const passwordInput = document.getElementById('password'); // Added password input
 
         const selectedOption = nameSelect.options[nameSelect.selectedIndex];
         const timeOfDay = timeOfDaySelect.value;
-        
+
         let price = selectedOption.getAttribute(`data-${timeOfDay.toLowerCase()}`);
-        let password = selectedOption.getAttribute('data-password');
-        
-        // Update the price input field
+        let password = selectedOption.getAttribute('data-password'); // Get password from selected option
+
         priceInput.value = price;
-        
-        // Show the password prompt
-        const enteredPassword = prompt('Please enter your password:');
-        
-        // Check if the entered password matches the predefined password
-        if (enteredPassword !== password) {
-            alert('Incorrect password. Please try again.');
-            passwordField.value = ''; // Reset the password field
-            return;
-        }
-        
-        // If the password is correct, store it in the hidden password field
-        passwordField.value = enteredPassword;
+        passwordInput.value = ""; // Reset password input field when name is changed
     }
 
     function handleFormSubmission(event) {
         event.preventDefault();
         
-        const form = event.target;
-        const formData = new FormData(form);
+        const nameSelect = document.getElementById('name');
+        const enteredPassword = document.getElementById('entered_password').value; // Get entered password
+        const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password'); // Get correct password
 
-        fetch(form.action, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(result => {
-            if (result.trim() === 'success') {
-                alert('Record added successfully!');
-            } else {
+        // Check if the entered password matches the correct password
+        if (enteredPassword === correctPassword) {
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                if (result.trim() === 'success') {
+                    alert('Record added successfully!');
+                } else {
+                    alert('There was an error. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
                 alert('There was an error. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error. Please try again.');
-        });
+            });
+        } else {
+            alert('Incorrect password. Please try again.');
+        }
     }
 
+    // Function to open the modal
     function openPopup() {
         document.getElementById("dailyUpdateModal").style.display = "block";
     }
 
+    // Function to close the modal
     function closeModal() {
         document.getElementById("dailyUpdateModal").style.display = "none";
     }
 
+    // Close the modal if user clicks outside the modal content
     window.onclick = function(event) {
         const modal = document.getElementById("dailyUpdateModal");
         if (event.target === modal) {
@@ -357,7 +356,10 @@
                 </select>
             </div>
             <input type="hidden" name="price" id="price" value="60">
-            <input type="hidden" name="password" id="password" value="">
+            <div class="form-group">
+                    <label for="entered_password">Password:</label>
+                    <input type="password" id="entered_password" name="entered_password" required>
+                </div>
 
             
             <div class="form-group">
