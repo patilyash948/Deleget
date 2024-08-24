@@ -24,6 +24,12 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
         }
         h1 {
             text-align: center;
@@ -54,6 +60,31 @@
         }
         input[type="submit"]:hover, button:hover {
             background-color: #45a049;
+        }
+        .popup-btn {
+    padding: 15px 30px; /* Adjusted padding */
+    width: 250px; /* Fixed width */
+    height: 50px; /* Fixed height */
+    font-size: 18px; /* Larger font size */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    
+  
+}
+        .popup-btn:hover {
+            background-color: #45a049;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
         }
     </style>
  <script>
@@ -162,14 +193,20 @@
 
 
 
+<!-- Button to trigger popup -->
+<button class="popup-btn" onclick="openPopup()">Khandesh Express</button>
+
+<!-- Popup Overlay -->
+<div class="popup-overlay" onclick="closePopup()"></div>
+
+<!-- Popup Form -->
 <div class="container">
     <h1>Daily Updates Form</h1>
     <form action="process1.php" method="post" onsubmit="handleFormSubmission(event)">
         <div class="form-group">
             <label for="name">Name:</label>
             <select name="name" id="name" required onchange="updatePrice()">
-    <option value="" disabled selected>Select a name</option>
-    <option value="मोहन पाटील" data-morning="60" data-evening="60">मोहन पाटील</option>
+                 <option value="मोहन पाटील" data-morning="60" data-evening="60">मोहन पाटील</option>
     <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60">सुमित कुलकर्णी</option>
     <option value="चेतन ढाके" data-morning="60" data-evening="60">चेतन ढाके</option>
     <option value="अजय साळुंखे" data-morning="60" data-evening="60">अजय साळुंखे</option>
@@ -203,7 +240,7 @@
     <option value="प्रज्वल फिरके" data-morning="60" data-evening="60">प्रज्वल फिरके</option>
     <option value="निलेश" data-morning="60" data-evening="60">निलेश</option>
     <option value="Unknown" data-morning="0" data-evening="70">Unknown</option>
-</select>
+            </select>
         </div>
 
         <div class="form-group">
@@ -221,7 +258,6 @@
         </div>
     </form>
 </div>
-
 
             
 
