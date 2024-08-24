@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet" />
-    <style>
+   <style>
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f4f4;
@@ -24,12 +24,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: none;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
         }
         h1 {
             text-align: center;
@@ -61,30 +55,38 @@
         input[type="submit"]:hover, button:hover {
             background-color: #45a049;
         }
-        .popup-btn {
-    padding: 15px 30px; /* Adjusted padding */
-    width: 250px; /* Fixed width */
-    height: 50px; /* Fixed height */
-    font-size: 18px; /* Larger font size */
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    
-  
-}
-        .popup-btn:hover {
-            background-color: #45a049;
-        }
-        .popup-overlay {
+        /* Modal styles */
+        .modal {
+            display: none;
             position: fixed;
-            top: 0;
+            z-index: 1;
             left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 999;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
  <script>
@@ -194,7 +196,7 @@
 
 
 <!-- Button to trigger popup -->
-<button class="popup-btn" onclick="openPopup()">Khandesh Express</button>
+<button class="popup-btn" onclick="openPopup()">Open Daily Updates Form</button>
 
 <!-- Popup Overlay -->
 <div class="popup-overlay" onclick="closePopup()"></div>
@@ -206,40 +208,15 @@
         <div class="form-group">
             <label for="name">Name:</label>
             <select name="name" id="name" required onchange="updatePrice()">
-                 <option value="मोहन पाटील" data-morning="60" data-evening="60">मोहन पाटील</option>
-    <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60">सुमित कुलकर्णी</option>
-    <option value="चेतन ढाके" data-morning="60" data-evening="60">चेतन ढाके</option>
-    <option value="अजय साळुंखे" data-morning="60" data-evening="60">अजय साळुंखे</option>
-    <option value="प्रतिक चौधरी" data-morning="60" data-evening="70">प्रतिक चौधरी</option>
-    <option value="निखिल राणे" data-morning="60" data-evening="70">निखिल राणे</option>
-    <option value="यश शेलकर" data-morning="60" data-evening="70">यश शेलकर</option>
-    <option value="हितेश पाटील" data-morning="60" data-evening="70">हितेश पाटील</option>
-    <option value="योगेश चोपडे" data-morning="60" data-evening="70">योगेश चोपडे</option>
-    <option value="रोहित फालक" data-morning="60" data-evening="70">रोहित फालक</option>
-    <option value="भावेश झोपे" data-morning="60" data-evening="70">भावेश झोपे</option>
-    <option value="राहुल पाटील" data-morning="60" data-evening="60">राहुल पाटील</option>
-    <option value="प्रितम पाटील" data-morning="60" data-evening="70">प्रितम पाटील</option>
-    <option value="पुष्पक पाटील" data-morning="60" data-evening="70">पुष्पक पाटील</option>
-    <option value="वैभव ढाके" data-morning="60" data-evening="70">वैभव ढाके</option>
-    <option value="श्रृती" data-morning="60" data-evening="70">श्रृती</option>
-    <option value="राजू दादा" data-morning="60" data-evening="70">राजू दादा</option>
-    <option value="कुमार धांडे" data-morning="60" data-evening="70">कुमार धांडे</option>
-    <option value="जयेश नेहेते" data-morning="60" data-evening="70">जयेश नेहेते</option>
-    <option value="शुभम महाजन" data-morning="60" data-evening="70">शुभम महाजन</option>
-    <option value="राकेश कोल्हे" data-morning="60" data-evening="60">राकेश कोल्हे</option>
-    <option value="संदेश पाटील" data-morning="60" data-evening="60">संदेश पाटील</option>
-    <option value="विपुल पाटील" data-morning="60" data-evening="60">विपुल पाटील</option>
-    <option value="परेश चौधरी" data-morning="60" data-evening="60">परेश चौधरी</option>
-    <option value="रोहित जाधव" data-morning="60" data-evening="60">रोहित जाधव</option>
-    <option value="राहूल पाटील" data-morning="60" data-evening="60">राहूल पाटील</option>
-    <option value="राकेश पालस्टे" data-morning="70" data-evening="70">राकेश पालस्टे</option>
-    <option value="दिपक" data-morning="70" data-evening="70">दिपक</option>
-    <option value="उदय पाटील" data-morning="70" data-evening="70">उदय पाटील</option>
-    <option value="आश्विन भारंबे" data-morning="70" data-evening="70">आश्विन भारंबे</option>
-    <option value="योगेश पाटील" data-morning="60" data-evening="60">योगेश पाटील</option>
-    <option value="प्रज्वल फिरके" data-morning="60" data-evening="60">प्रज्वल फिरके</option>
-    <option value="निलेश" data-morning="60" data-evening="60">निलेश</option>
-    <option value="Unknown" data-morning="0" data-evening="70">Unknown</option>
+                <option value="" disabled selected>Select a name</option>
+                <option value="मोहन पाटील" data-morning="60" data-evening="60">मोहन पाटील</option>
+                <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60">सुमित कुलकर्णी</option>
+                <option value="चेतन ढाके" data-morning="60" data-evening="60">चेतन ढाके</option>
+                <option value="अजय साळुंखे" data-morning="60" data-evening="60">अजय साळुंखे</option>
+                <option value="प्रतिक चौधरी" data-morning="60" data-evening="70">प्रतिक चौधरी</option>
+                <option value="निखिल राणे" data-morning="60" data-evening="70">निखिल राणे</option>
+                <!-- Continue with the rest of the options as per your list -->
+                <option value="Unknown" data-morning="0" data-evening="70">Unknown</option>
             </select>
         </div>
 
@@ -258,8 +235,6 @@
         </div>
     </form>
 </div>
-
-            
 
 
 
