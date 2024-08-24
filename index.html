@@ -210,11 +210,14 @@
                     alert('There was an error. Please try again.');
                 }
             })
-            .catch(error => {
+             .catch(error => {
                 console.error('Error:', error);
                 alert('There was an error. Please try again.');
             });
+        } else {
+            alert('Incorrect password! Please try again.');
         }
+    }
 
         // Function to open the modal
 function openPopup() {
