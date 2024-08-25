@@ -544,7 +544,6 @@ function submitForm(form) {
         </form>
     </div>
 </div>
-
             
             <!-- Features Section -->
             <section class="features-section">
@@ -635,11 +634,18 @@ function submitForm(form) {
     function submitOrder(event) {
         event.preventDefault(); // Prevent form submission
 
-        const name = document.getElementById('name').value;
-        const location = document.getElementById('location').value;
+        const name = document.getElementById('name').value.trim();
+        const location = document.getElementById('location').value.trim();
         const noOfPersons = document.getElementById('no-of-persons').value;
         const dishName = document.getElementById('dish-name').textContent;
 
+        // Debugging - log the captured values
+        console.log("Name:", name);
+        console.log("Location:", location);
+        console.log("Number of Persons:", noOfPersons);
+        console.log("Dish Name:", dishName);
+
+        // Check if all fields are filled
         if (name && location && noOfPersons) {
             const message = `Order Details:\nDish: ${dishName}\nName: ${name}\nLocation: ${location}\nNumber of Persons: ${noOfPersons}`;
             const whatsappNumber = "917020447482"; // Replace with your WhatsApp number, including country code
