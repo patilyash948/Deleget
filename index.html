@@ -234,11 +234,11 @@ select {
     }
 
     function handleFormSubmission(event) {
-        event.preventDefault();
-        
-        const nameSelect = document.getElementById('name');
-        const enteredPassword = document.getElementById('entered_password').value; // Get entered password
-        const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password'); // Get correct password
+         event.preventDefault();
+    
+    const nameSelect = document.getElementById('name');
+    const enteredPassword = document.getElementById('entered_password').value; // Get entered password
+    const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password'); // Get correct password
 
          // Check if the correctPassword is empty, meaning no password is required
     if (!correctPassword || enteredPassword === correctPassword) {
