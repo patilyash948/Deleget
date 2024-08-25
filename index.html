@@ -636,15 +636,10 @@ function submitForm(form) {
         const name = document.getElementById('name').value;
         const location = document.getElementById('location').value;
         const noOfPersons = document.getElementById('no-of-persons').value;
-        const dishName = document.getElementById('dish-name').textContent;
 
         if (name && location && noOfPersons) {
-            const message = `Order Details:\nDish: ${dishName}\nName: ${name}\nLocation: ${location}\nNo of Persons: ${noOfPersons}`;
-            const whatsappNumber = '919637587224'; // Add the WhatsApp number with country code
-
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            
-            window.open(whatsappURL, '_blank');
+            alert('Order placed successfully for ' + noOfPersons + ' persons!');
+            closeOrderModal();
         } else {
             alert('Please fill in all fields.');
         }
