@@ -530,7 +530,7 @@ function submitForm(form) {
     <div class="modal-content">
         <span class="close-btn" onclick="closeOrderModal()">&times;</span>
         <h2 id="dish-name"></h2>
-        <form id="order-form">
+        <form id="order-form" onsubmit="submitOrder(event)">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -540,7 +540,7 @@ function submitForm(form) {
             <label for="no-of-persons">No of Persons:</label>
             <input type="number" id="no-of-persons" name="no-of-persons" min="1" required>
 
-           <button type="button" onclick="submitOrder()">Place Order</button>
+            <button type="submit">Place Order</button>
         </form>
     </div>
 </div>
@@ -646,6 +646,7 @@ function submitForm(form) {
     }
 
     window.onclick = function(event) {
+        event.preventDefault(); // Prevent form submission
         const modal = document.getElementById('order-modal');
         if (event.target === modal) {
             closeOrderModal();
