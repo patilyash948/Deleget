@@ -19,7 +19,6 @@
     align-items: center;
            
         }
-        
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -41,16 +40,6 @@
             margin-bottom: 5px;
             font-weight: 500;
         }
-     
-       .radio-group {
-    display: flex;
-    gap: 10px; /* Adjust spacing as needed */
-    align-items: center;
-}
-
-.radio-group input[type="radio"] {
-    margin-right: 5px; /* Adjust spacing between radio button and label */
-}
         select, input[type="submit"], button {
             width: 100%;
             padding: 10px;
@@ -68,20 +57,6 @@
         input[type="submit"]:hover, button:hover {
             background-color: #45a049;
         }
-
-
-
-/* Ensure all input fields have consistent styling */
-input[type="text"], 
-input[type="password"], 
-select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-}
         /* Modal styles */
         /* Modal styles */
 .modal {
@@ -192,31 +167,33 @@ select {
         }
     </style>
 <script>
-    function updatePrice() {
-        const nameSelect = document.getElementById('name');
-        const timeOfDaySelect = document.getElementById('time_of_day');
-        const priceInput = document.getElementById('price');
-        const passwordInput = document.getElementById('password'); // Added password input
 
-        const selectedOption = nameSelect.options[nameSelect.selectedIndex];
-        const timeOfDay = timeOfDaySelect.value;
 
-        let price = selectedOption.getAttribute(`data-${timeOfDay.toLowerCase()}`);
-        let password = selectedOption.getAttribute('data-password'); // Get password from selected option
-
-        priceInput.value = price;
-        passwordInput.value = ""; // Reset password input field when name is changed
-    }
-
-    function handleFormSubmission(event) {
-        event.preventDefault();
+    const userPasswords = {
+            "मोहन पाटील": "1234",
+            "सुमित कुलकर्णी": "5678",
+            "चेतन ढाके": "9012",
+            "अजय साळुंखे": "3456",
+            "प्रतिक चौधरी": "7890",
+            "निखिल राणे": "2345",
+            // Add more users and passwords as needed
+            "Unknown": "0000"
+        };
+        function updatePrice() {
+            const nameSelect = document.getElementById('name');
+            const timeOfDaySelect = document.getElementById('time_of_day');
+            const priceInput = document.getElementById('price');
+            
+            const selectedOption = nameSelect.options[nameSelect.selectedIndex];
+            const timeOfDay = timeOfDaySelect.value;
         
-        const nameSelect = document.getElementById('name');
-        const enteredPassword = document.getElementById('entered_password').value; // Get entered password
-        const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password'); // Get correct password
+            let price = selectedOption.getAttribute(`data-${timeOfDay.toLowerCase()}`);
+            priceInput.value = price;
+        }
 
-        // Check if the entered password matches the correct password
-        if (enteredPassword === correctPassword) {
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            
             const form = event.target;
             const formData = new FormData(form);
 
@@ -228,6 +205,7 @@ select {
             .then(result => {
                 if (result.trim() === 'success') {
                     alert('Record added successfully!');
+                    
                 } else {
                     alert('There was an error. Please try again.');
                 }
@@ -236,31 +214,26 @@ select {
                 console.error('Error:', error);
                 alert('There was an error. Please try again.');
             });
-        } else {
-            alert('Incorrect password. Please try again.');
         }
-    }
 
-    // Function to open the modal
-    function openPopup() {
-        document.getElementById("dailyUpdateModal").style.display = "block";
-    }
+        // Function to open the modal
+function openPopup() {
+    document.getElementById("dailyUpdateModal").style.display = "block";
+}
 
-    // Function to close the modal
-    function closeModal() {
-        document.getElementById("dailyUpdateModal").style.display = "none";
-    }
+// Function to close the modal
+function closeModal() {
+    document.getElementById("dailyUpdateModal").style.display = "none";
+}
 
-    // Close the modal if user clicks outside the modal content
-    window.onclick = function(event) {
-        const modal = document.getElementById("dailyUpdateModal");
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
+// Close the modal if user clicks outside the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById("dailyUpdateModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
     }
-      
-    
-</script>
+}
+    </script>
 
     
 </head>
@@ -334,15 +307,13 @@ select {
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h1>Daily Updates Form</h1>
-         <!-- Display current date and time here -->
-            <p id="current_date_time_display"></p>
         <form action="https://banjoscafe.in/process1.php" method="post" onsubmit="handleFormSubmission(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
                  <select name="name" id="name" required onchange="updatePrice()">
                 <option value="" disabled selected>Select a name</option>
-                 <option value="मोहन पाटील" data-morning="60" data-evening="60" data-password="1234">मोहन पाटील</option>
-                                <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60" data-password="5678">सुमित कुलकर्णी</option>
+                <option value="मोहन पाटील" data-morning="60" data-evening="60">मोहन पाटील</option>
+                <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60">सुमित कुलकर्णी</option>
                 <option value="चेतन ढाके" data-morning="60" data-evening="60">चेतन ढाके</option>
                 <option value="अजय साळुंखे" data-morning="60" data-evening="60">अजय साळुंखे</option>
                 <option value="प्रतिक चौधरी" data-morning="60" data-evening="70">प्रतिक चौधरी</option>
@@ -378,24 +349,20 @@ select {
             </select>
             </div>
             <div class="form-group">
-    <div class="form-group">
-    <label>Time of Day:</label>
-    <div class="radio-group">
-        <input type="radio" id="morning" name="time_of_day" value="Morning" required onchange="updatePrice()">
-        <label for="morning">Morning</label>
-        
-        <input type="radio" id="evening" name="time_of_day" value="Evening" required onchange="updatePrice()">
-        <label for="evening">Evening</label>
-    </div>
-</div>
-
+                <label for="time_of_day">Time of Day:</label>
+                <select name="time_of_day" id="time_of_day" required onchange="updatePrice()">
+                    <option value="Morning">Morning</option>
+                    <option value="Evening">Evening</option>
+                </select>
+            </div>
             <input type="hidden" name="price" id="price" value="60">
-            <div class="form-group">
-                    <label for="entered_password">Password:</label>
-                    <input type="password" id="entered_password" name="entered_password" required>
-                </div>
-  <!-- Visible input for current date and time -->
-                
+
+        
+
+                   <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        </div>
 
             
             <div class="form-group">
