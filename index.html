@@ -234,30 +234,37 @@ select {
     }
 
     function handleFormSubmission(event) {
-         function handleFormSubmission(event) {
-    event.preventDefault();
-    
-    const nameSelect = document.getElementById('name');
-    const enteredPassword = document.getElementById('entered_password').value; // Get entered password
-    const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password'); // Get correct password
+        event.preventDefault();
+        
+        const nameSelect = document.getElementById('name');
+        const enteredPassword = document.getElementById('entered_password').value; // Get entered password
+        const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password'); // Get correct password
 
-    // If the selected option has a password
-    if (correctPassword) {
         // Check if the entered password matches the correct password
         if (enteredPassword === correctPassword) {
-            submitForm(event.target); // Submit form if passwords match
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                if (result.trim() === 'success') {
+                    alert('Record added successfully!');
+                } else {
+                    alert('There was an error. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error. Please try again.');
+            });
         } else {
             alert('Incorrect password. Please try again.');
         }
-    } else {
-        // If no password is assigned, submission is allowed without a password
-        if (enteredPassword === "") {
-            submitForm(event.target); // Submit form without a password
-        } else {
-            alert('Password is not required for this person.');
-        }
     }
-}
 
 function submitForm(form) {
     const formData = new FormData(form);
