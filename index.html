@@ -532,7 +532,7 @@ function submitForm(form) {
         <h2 id="dish-name"></h2>
         <form id="order-form" onsubmit="submitOrder(event)">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name1" name="name1" required>
 
             <label for="location">Location:</label>
             <input type="text" id="location" name="location" required>
@@ -634,7 +634,7 @@ function submitForm(form) {
     function submitOrder(event) {
         event.preventDefault(); // Prevent form submission
 
-        const name = document.getElementById('name').value.trim();
+        const name = document.getElementById('name1').value.trim();
         const location = document.getElementById('location').value.trim();
         const noOfPersons = document.getElementById('no-of-persons').value;
         const dishName = document.getElementById('dish-name').textContent;
@@ -647,7 +647,7 @@ function submitForm(form) {
 
         // Check if all fields are filled
         if (name && location && noOfPersons) {
-            const message = `Order Details:\nDish: ${dishName}\nName: ${name}\nLocation: ${location}\nNumber of Persons: ${noOfPersons}`;
+            const message = `Order Details:\nDish: ${dishName}\nName: ${name1}\nLocation: ${location}\nNumber of Persons: ${noOfPersons}`;
             const whatsappNumber = "919764517769"; // Replace with your WhatsApp number, including country code
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
