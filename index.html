@@ -240,31 +240,31 @@ select {
         const enteredPassword = document.getElementById('entered_password').value; // Get entered password
         const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password'); // Get correct password
 
-        // Check if the entered password matches the correct password
-        if (enteredPassword === correctPassword) {
-            const form = event.target;
-            const formData = new FormData(form);
+         // Check if the correctPassword is empty, meaning no password is required
+    if (!correctPassword || enteredPassword === correctPassword) {
+        const form = event.target;
+        const formData = new FormData(form);
 
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(result => {
-                if (result.trim() === 'success') {
-                    alert('Record added successfully!');
-                } else {
-                    alert('There was an error. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            if (result.trim() === 'success') {
+                alert('Record added successfully!');
+            } else {
                 alert('There was an error. Please try again.');
-            });
-        } else {
-            alert('Incorrect password. Please try again.');
-        }
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error. Please try again.');
+        });
+    } else {
+        alert('Incorrect password. Please try again.');
     }
+}
 
     // Function to open the modal
     function openPopup() {
