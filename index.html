@@ -494,6 +494,29 @@ function submitForm(form) {
         </div>
     </div>
 </section>
+
+
+            <!-- Order Popup Modal -->
+<div id="order-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeOrderModal()">&times;</span>
+        <h2 id="dish-name"></h2>
+        <form id="order-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="no-of-persons">No of Persons:</label>
+            <input type="number" id="no-of-persons" name="no-of-persons" min="1" required>
+
+            <button type="submit" onclick="submitOrder()">Place Order</button>
+        </form>
+    </div>
+</div>
+
+            
             <!-- Features Section -->
             <section class="features-section">
                 <h2>Our Services</h2>
@@ -568,5 +591,37 @@ function submitForm(form) {
             menu.classList.toggle('active');
         }
     </script>
+
+
+    <script>
+    function openOrderModal(dishName) {
+        document.getElementById('order-modal').style.display = 'block';
+        document.getElementById('dish-name').textContent = 'Order ' + dishName;
+    }
+
+    function closeOrderModal() {
+        document.getElementById('order-modal').style.display = 'none';
+    }
+
+    function submitOrder() {
+        const name = document.getElementById('name').value;
+        const location = document.getElementById('location').value;
+        const noOfPersons = document.getElementById('no-of-persons').value;
+
+        if (name && location && noOfPersons) {
+            alert('Order placed successfully for ' + noOfPersons + ' persons!');
+            closeOrderModal();
+        } else {
+            alert('Please fill in all fields.');
+        }
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('order-modal');
+        if (event.target === modal) {
+            closeOrderModal();
+        }
+    }
+</script>
 </body>
 </html>
