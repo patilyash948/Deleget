@@ -540,7 +540,7 @@ function submitForm(form) {
             <label for="no-of-persons">No of Persons:</label>
             <input type="number" id="no-of-persons" name="no-of-persons" min="1" required>
 
-            <button type="submit" onclick="submitOrder()">Place Order</button>
+           <button type="button" onclick="submitOrder()">Place Order</button>
         </form>
     </div>
 </div>
@@ -622,7 +622,7 @@ function submitForm(form) {
     </script>
 
 
-    <script>
+  <script>
     function openOrderModal(dishName) {
         document.getElementById('order-modal').style.display = 'block';
         document.getElementById('dish-name').textContent = 'Order ' + dishName;
@@ -636,10 +636,15 @@ function submitForm(form) {
         const name = document.getElementById('name').value;
         const location = document.getElementById('location').value;
         const noOfPersons = document.getElementById('no-of-persons').value;
+        const dishName = document.getElementById('dish-name').textContent;
 
         if (name && location && noOfPersons) {
-            alert('Order placed successfully for ' + noOfPersons + ' persons!');
-            closeOrderModal();
+            const message = `Order Details:\nDish: ${dishName}\nName: ${name}\nLocation: ${location}\nNo of Persons: ${noOfPersons}`;
+            const whatsappNumber = '919637587224'; // Add the WhatsApp number with country code
+
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappURL, '_blank');
         } else {
             alert('Please fill in all fields.');
         }
