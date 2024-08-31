@@ -244,88 +244,88 @@ select {
         }
     </style>
 <script>
-    function updatePrice() {
-        const nameSelect = document.getElementById('name');
-        const selectedOption = nameSelect.options[nameSelect.selectedIndex];
-        const timeOfDay = document.querySelector('input[name="time_of_day"]:checked');
+   function updatePrice() {
+    const nameSelect = document.getElementById('name');
+    const selectedOption = nameSelect.options[nameSelect.selectedIndex];
+    const timeOfDay = document.querySelector('input[name="time_of_day"]:checked');
 
-        if (timeOfDay && selectedOption) {
-            const price = selectedOption.getAttribute(`data-${timeOfDay.value.toLowerCase()}`);
-            const password = selectedOption.getAttribute('data-password');
+    if (timeOfDay && selectedOption) {
+        // Corrected data attribute selection
+        const price = selectedOption.getAttribute(`data-${timeOfDay.value.toLowerCase()}`);
+        const password = selectedOption.getAttribute('data-password');
 
-            document.getElementById('price').value = price;
-            document.getElementById('entered_password').value = ''; // Reset entered password when name changes
-        }
+        document.getElementById('price').value = price;
+        document.getElementById('entered_password').value = ''; // Reset entered password when name changes
     }
+}
 
-    function handleFormSubmission(event) {
-        event.preventDefault();
+function handleFormSubmission(event) {
+    event.preventDefault();
 
-        const nameSelect = document.getElementById('name');
-        const enteredPassword = document.getElementById('entered_password').value;
-        const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password');
+    const nameSelect = document.getElementById('name');
+    const enteredPassword = document.getElementById('entered_password').value;
+    const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password');
 
-        if (enteredPassword === correctPassword) {
-            const form = event.target;
-            const formData = new FormData(form);
+    if (enteredPassword === correctPassword) {
+        const form = event.target;
+        const formData = new FormData(form);
 
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(result => {
-                if (result.trim() === 'success') {
-                    alert('Record added successfully!');
-                } else {
-                    alert('There was an error. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            if (result.trim() === 'success') {
+                alert('Record added successfully!');
+            } else {
                 alert('There was an error. Please try again.');
-            });
-        } else {
-            alert('Incorrect password. Please try again.');
-        }
-    }
-
-    // Open and close modal
-    function openPopup() {
-        document.getElementById("dailyUpdateModal").style.display = "block";
-    }
-
-    function closeModal() {
-        document.getElementById("dailyUpdateModal").style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        const modal = document.getElementById("dailyUpdateModal");
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-
-
-
-       // Set the current date as the default in the date picker, but allow user selection
-window.onload = function() {
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = String(today.getMonth() + 1).padStart(2, '0'); // Month is zero-based, so add 1
-        const day = String(today.getDate()).padStart(2, '0');
-        const formattedDate = `${year}-${month}-${day}`;
-
-        // Set the current date as default in the date picker
-        const datePicker = document.getElementById('entry_date');
-        datePicker.value = formattedDate;
-
-        // Allow users to manually select another date
-        datePicker.addEventListener('change', function() {
-            const selectedDate = datePicker.value;
-            console.log(`User selected date: ${selectedDate}`);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error. Please try again.');
         });
-    };
+    } else {
+        alert('Incorrect password. Please try again.');
     }
+}
+
+// Open and close modal
+function openPopup() {
+    document.getElementById("dailyUpdateModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("dailyUpdateModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("dailyUpdateModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Set the current date as the default in the date picker, but allow user selection
+window.onload = function() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Month is zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+
+    // Set the current date as default in the date picker
+    const datePicker = document.getElementById('entry_date');
+    datePicker.value = formattedDate;
+
+    // Allow users to manually select another date
+    datePicker.addEventListener('change', function() {
+        const selectedDate = datePicker.value;
+        console.log(`User selected date: ${selectedDate}`);
+    });
+};
+
 </script>
     
 </head>
