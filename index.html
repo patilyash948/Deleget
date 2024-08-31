@@ -244,32 +244,27 @@ select {
         }
     </style>
 <script>
-
-
     function updatePrice() {
         const nameSelect = document.getElementById('name');
-        const timeOfDaySelect = document.getElementById('time_of_day');
-        const priceInput = document.getElementById('price');
-        const passwordInput = document.getElementById('password'); // Added password input
-
         const selectedOption = nameSelect.options[nameSelect.selectedIndex];
-        const timeOfDay = timeOfDaySelect.value;
+        const timeOfDay = document.querySelector('input[name="time_of_day"]:checked');
 
-        let price = selectedOption.getAttribute(`data-${timeOfDay.toLowerCase()}`);
-        let password = selectedOption.getAttribute('data-password'); // Get password from selected option
+        if (timeOfDay && selectedOption) {
+            const price = selectedOption.getAttribute(`data-${timeOfDay.value.toLowerCase()}`);
+            const password = selectedOption.getAttribute('data-password');
 
-        priceInput.value = price;
-        passwordInput.value = ""; // Reset password input field when name is changed
+            document.getElementById('price').value = price;
+            document.getElementById('entered_password').value = ''; // Reset entered password when name changes
+        }
     }
 
     function handleFormSubmission(event) {
         event.preventDefault();
-        
-        const nameSelect = document.getElementById('name');
-        const enteredPassword = document.getElementById('entered_password').value; // Get entered password
-        const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password'); // Get correct password
 
-        // Check if the entered password matches the correct password
+        const nameSelect = document.getElementById('name');
+        const enteredPassword = document.getElementById('entered_password').value;
+        const correctPassword = nameSelect.options[nameSelect.selectedIndex].getAttribute('data-password');
+
         if (enteredPassword === correctPassword) {
             const form = event.target;
             const formData = new FormData(form);
@@ -295,48 +290,22 @@ select {
         }
     }
 
-function submitForm(form) {
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-        if (result.trim() === 'success') {
-            alert('Record added successfully!');
-        } else {
-            alert('There was an error. Please try again.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error. Please try again.');
-    });
-}
-
-
-    // Function to open the modal
+    // Open and close modal
     function openPopup() {
         document.getElementById("dailyUpdateModal").style.display = "block";
     }
 
-    // Function to close the modal
     function closeModal() {
         document.getElementById("dailyUpdateModal").style.display = "none";
     }
 
-    // Close the modal if user clicks outside the modal content
     window.onclick = function(event) {
         const modal = document.getElementById("dailyUpdateModal");
         if (event.target === modal) {
             modal.style.display = "none";
         }
     }
-      
-    </script>
-
+</script>
     
 </head>
 <body>
