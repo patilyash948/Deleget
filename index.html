@@ -307,15 +307,25 @@ select {
 
 
 
-        // Set the current date as default in the date picker
-    window.onload = function() {
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = String(today.getMonth() + 1).padStart(2, '0'); // Month is zero-based, so add 1
-        const day = String(today.getDate()).padStart(2, '0');
-        const formattedDate = `${year}-${month}-${day}`;
-        document.getElementById('entry_date').value = formattedDate;
-    };
+       // Set the current date as the default in the date picker, but allow user selection
+window.onload = function() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Month is zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+
+    // Set the current date as default in the date picker
+    const datePicker = document.getElementById('entry_date');
+    datePicker.value = formattedDate;
+
+    // Allow users to manually select another date
+    datePicker.addEventListener('change', function() {
+        const selectedDate = datePicker.value;
+        console.log(`User selected date: ${selectedDate}`);
+    });
+};
+
     }
 </script>
     
