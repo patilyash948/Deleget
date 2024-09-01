@@ -313,6 +313,14 @@ function openPopup() {
 function closeModal() {
     document.getElementById("dailyUpdateModal").style.display = "none";
 }
+// Function to open the already submitted modal
+function openAlreadySubmittedModal() {
+    document.getElementById('alreadySubmittedModal').style.display = 'block';
+}
+    // Function to close the already submitted modal
+function closeAlreadySubmittedModal() {
+    document.getElementById('alreadySubmittedModal').style.display = 'none';
+}
 
 window.onclick = function(event) {
     const modal = document.getElementById("dailyUpdateModal");
@@ -498,6 +506,15 @@ window.onload = function() {
     </div>
 </div>
 
+            <!-- Already Submitted Message Modal -->
+<div id="alreadySubmittedModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAlreadySubmittedModal()">&times;</span>
+        <h2>Warning</h2>
+        <p>You have already submitted data for this time of day and date.</p>
+        <button class="modal-close-btn" onclick="closeAlreadySubmittedModal()">Close</button>
+    </div>
+</div>
 
 
 
