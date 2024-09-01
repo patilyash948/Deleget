@@ -420,7 +420,7 @@ window.onload = function() {
 <button class="popup-btn" onclick="openPopup()">Khandesh Express, New Sangvi</button>
             
             <!-- Button to trigger popup -->
-<button class="popup-btn">Banjos Cafe, Savda(Jalgaon)</button>
+<button class="popup-btn" onclick="openWebsite()">Banjos Cafe, Savda(Jalgaon)</button>
 
 <!-- Popup Overlay -->
 <div id="dailyUpdateModal" class="modal">
@@ -666,6 +666,11 @@ window.onload = function() {
             const menu = document.getElementById(category);
             menu.classList.toggle('active');
         }
+        <script>
+    function openWebsite() {
+        window.open('https://banjoscafe.in', '_blank');
+    }
+</script>
     </script>
 
 
