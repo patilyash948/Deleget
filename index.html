@@ -278,7 +278,7 @@ function handleFormSubmission(event) {
         .then(response => response.text())
         .then(result => {
             if (result.trim() === 'success') {
-                alert('Record added successfully!');
+                openSuccessModal(); // Show success modal
             } else {
                 alert('There was an error. Please try again.');
             }
