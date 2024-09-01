@@ -353,6 +353,43 @@ window.onload = function() {
     });
 };
 
+
+
+
+    function viewRecords() {
+    const nameSelect = document.getElementById('name');
+    const selectedName = nameSelect.value;
+
+    if (selectedName) {
+        fetch(`https://banjoscafe.in/view_records.php?name=${encodeURIComponent(selectedName)}`)
+            .then(response => response.json())
+            .then(records => {
+                if (records.length > 0) {
+                    displayRecords(records); // Display fetched records
+                } else {
+                    alert("No records found for this name.");
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching records:', error);
+                alert("An error occurred. Please try again.");
+            });
+    } else {
+        alert("Please select a name to view records.");
+    }
+}
+
+function displayRecords(records) {
+    const recordsContainer = document.getElementById('recordsContainer');
+    recordsContainer.innerHTML = ''; // Clear existing records
+
+    records.forEach(record => {
+        const recordElement = document.createElement('p');
+        recordElement.textContent = `Date: ${record.date}, Time of Day: ${record.time_of_day}`;
+        recordsContainer.appendChild(recordElement);
+    });
+}
+
 </script>
     
 </head>
@@ -499,7 +536,8 @@ window.onload = function() {
                   <!-- View Records button -->
         <button class="modal-close-btn" onclick="viewRecords()">View Records</button>
                 </div>
-
+<!-- Container to display fetched records -->
+<div id="recordsContainer"></div>
             
            <div class="form-group">
                 
