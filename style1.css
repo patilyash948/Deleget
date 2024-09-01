@@ -253,6 +253,15 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Specific styling for Skyoud Technologies link */
+.footer-content p a {
+    color: #00FF00; /* Green color */
+}
+
+.footer-content p a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .search-section1 {
