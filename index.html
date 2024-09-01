@@ -292,6 +292,17 @@ function handleFormSubmission(event) {
     }
 }
 
+
+    // Show the success modal
+function openSuccessModal() {
+    document.getElementById("successModal").style.display = "flex";
+}
+
+// Close the success modal
+function closeSuccessModal() {
+    document.getElementById("successModal").style.display = "none";
+}
+
 // Open and close modal
 function openPopup() {
     document.getElementById("dailyUpdateModal").style.display = "block";
@@ -472,6 +483,16 @@ window.onload = function() {
                 <button type="submit">Submit</button>
             </div>
         </form>
+    </div>
+</div>
+
+            <!-- Success Message Modal -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSuccessModal()">&times;</span>
+        <h2>Success!</h2>
+        <p>Record added successfully!</p>
+        <button class="modal-close-btn" onclick="closeSuccessModal()">Close</button>
     </div>
 </div>
 
