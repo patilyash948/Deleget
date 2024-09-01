@@ -279,10 +279,12 @@ function handleFormSubmission(event) {
         .then(result => {
             if (result.trim() === 'success') {
                 openSuccessModal(); // Show success modal
-            } else {
-                alert('There was an error. Please try again.');
-            }
-        })
+             } else if (result.trim() === 'already_submitted') {
+            alert('You have already submitted data for this time of day and date.');
+        } else {
+            alert('An error occurred. Please try again.');
+        }
+    })
         .catch(error => {
             console.error('Error:', error);
             alert('There was an error. Please try again.');
