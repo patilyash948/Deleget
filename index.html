@@ -294,63 +294,6 @@ function handleFormSubmission(event) {
     }
 }
 
-
-
-
-function openSuccessModal(date, timeOfDay, day, previousRecords) {
-    const successModal = document.getElementById("successModal");
-    const successDate = document.getElementById("successDate");
-    const successTimeOfDay = document.getElementById("successTimeOfDay");
-    const successDay = document.getElementById("successDay");
-    const previousRecordsContainer = document.getElementById("previousRecords");
-
-    successDate.textContent = `Date: ${date}`;
-    successTimeOfDay.textContent = `Time of Day: ${timeOfDay}`;
-    successDay.textContent = `Day: ${day}`;
-
-    // Populate previous records
-    previousRecordsContainer.innerHTML = '';
-    previousRecords.forEach(record => {
-        const recordElement = document.createElement('p');
-        recordElement.textContent = `Date: ${record.date}, Time of Day: ${record.time_of_day}, Price: ${record.price}`;
-        previousRecordsContainer.appendChild(recordElement);
-    });
-
-    successModal.style.display = "flex";
-}
-
-function closeSuccessModal() {
-    document.getElementById("successModal").style.display = "none";
-}
-
-function openAlreadySubmittedModal() {
-    document.getElementById('alreadySubmittedModal').style.display = 'block';
-}
-
-function closeAlreadySubmittedModal() {
-    document.getElementById('alreadySubmittedModal').style.display = 'none';
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById("dailyUpdateModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
-    
-window.onload = function() {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    const formattedDate = `${year}-${month}-${day}`;
-    const datePicker = document.getElementById('entry_date');
-    datePicker.value = formattedDate;
-};
-
-
-
-
     
 
     // Show the success modal
@@ -573,19 +516,6 @@ window.onload = function() {
         <h2>Warning</h2>
         <p>You have already submitted data for this time of day and date.</p>
         <button class="modal-close-btn" onclick="closeAlreadySubmittedModal()">Close</button>
-    </div>
-</div>
-<!-- Success Message Modal -->
-<div id="successModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeSuccessModal()">&times;</span>
-        <h2>Success!</h2>
-        <p id="successDate"></p>
-        <p id="successTimeOfDay"></p>
-        <p id="successDay"></p>
-        <h3>Previous Records:</h3>
-        <div id="previousRecords"></div>
-        <button class="modal-close-btn" onclick="closeSuccessModal()">Close</button>
     </div>
 </div>
 
