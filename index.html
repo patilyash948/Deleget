@@ -327,6 +327,35 @@ window.onclick = function(event) {
     if (event.target === modal) {
         modal.style.display = "none";
     }
+
+
+    function viewRecords() {
+    const nameSelect = document.getElementById('name');
+    const name = nameSelect.value;
+    if (name) {
+        fetch(`https://banjoscafe.in/view_records.php?name=${encodeURIComponent(name)}`)
+        .then(response => response.json())
+        .then(data => {
+            let recordsTable = '<table><tr><th>Date</th><th>Time of Day</th><th>Price</th></tr>';
+            data.forEach(record => {
+                recordsTable += `<tr><td>${record.date}</td><td>${record.time_of_day}</td><td>${record.price}</td></tr>`;
+            });
+            recordsTable += '</table>';
+            document.getElementById('recordsTable').innerHTML = recordsTable;
+            document.getElementById('viewRecordsModal').style.display = "block";
+        })
+        .catch(error => {
+            console.error('Error fetching records:', error);
+            alert('Failed to fetch records.');
+        });
+    } else {
+        alert('Please select a name to view records.');
+    }
+}
+
+function closeViewRecordsModal() {
+    document.getElementById("viewRecordsModal").style.display = "none";
+}
 }
 
 // Set the current date as the default in the date picker, but allow user selection
