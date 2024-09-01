@@ -356,38 +356,48 @@ window.onload = function() {
 
 
 
-    function viewRecords() {
+   function viewRecords() {
     const nameSelect = document.getElementById('name');
-    const selectedName = nameSelect.value;
+    const selectedOption = nameSelect.options[nameSelect.selectedIndex];
+    
+    if (selectedOption.value) {
+        const name = selectedOption.value;
+        
+        // Set the name in the modal header
+        document.getElementById('selectedName').innerText = name;
 
-    if (selectedName) {
-        fetch(`https://banjoscafe.in/view_records.php?name=${encodeURIComponent(selectedName)}`)
+        // Fetch records from the server for the selected name
+        fetch(`https://banjoscafe.in/view_records.php?name=${encodeURIComponent(name)}`)
             .then(response => response.json())
             .then(records => {
+                const recordsContent = document.getElementById('recordsContent');
+                recordsContent.innerHTML = ''; // Clear any previous content
+
                 if (records.length > 0) {
-                    displayRecords(records); // Display fetched records
+                    let recordsHTML = '<ul>';
+                    records.forEach(record => {
+                        recordsHTML += `<li>Date: ${record.date}, Time of Day: ${record.time_of_day}</li>`;
+                    });
+                    recordsHTML += '</ul>';
+                    recordsContent.innerHTML = recordsHTML;
                 } else {
-                    alert("No records found for this name.");
+                    recordsContent.innerHTML = 'No records found for this person.';
                 }
+
+                // Open the modal to show the records
+                document.getElementById('recordsModal').style.display = 'block';
             })
             .catch(error => {
                 console.error('Error fetching records:', error);
-                alert("An error occurred. Please try again.");
+                alert('An error occurred while fetching the records.');
             });
     } else {
-        alert("Please select a name to view records.");
+        alert('Please select a name.');
     }
 }
 
-function displayRecords(records) {
-    const recordsContainer = document.getElementById('recordsContainer');
-    recordsContainer.innerHTML = ''; // Clear existing records
-
-    records.forEach(record => {
-        const recordElement = document.createElement('p');
-        recordElement.textContent = `Date: ${record.date}, Time of Day: ${record.time_of_day}`;
-        recordsContainer.appendChild(recordElement);
-    });
+function closeRecordsModal() {
+    document.getElementById('recordsModal').style.display = 'none';
 }
 
 </script>
@@ -536,8 +546,17 @@ function displayRecords(records) {
                   <!-- View Records button -->
         <button class="modal-close-btn" onclick="viewRecords()">View Records</button>
                 </div>
-<!-- Container to display fetched records -->
-<div id="recordsContainer"></div>
+<!-- Records Modal -->
+<div id="recordsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeRecordsModal()">&times;</span>
+        <h2>Records for <span id="selectedName"></span></h2>
+        <div id="recordsContent">
+            <!-- Fetched records will be displayed here -->
+        </div>
+        <button class="modal-close-btn" onclick="closeRecordsModal()">Close</button>
+    </div>
+</div>
             
            <div class="form-group">
                 
