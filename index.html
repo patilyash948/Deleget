@@ -280,7 +280,7 @@ function handleFormSubmission(event) {
             if (result.trim() === 'success') {
                 openSuccessModal(); // Show success modal
              } else if (result.trim() === 'already_submitted') {
-            alert('You have already submitted data for this time of day and date.');
+                 openAlreadySubmittedModal(); // Show already submitted modal
         } else {
             alert('An error occurred. Please try again.');
         }
