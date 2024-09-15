@@ -586,7 +586,80 @@ function closeRecordsModal() {
     </div>
 </div>
 
+
+
+
+
+
+<!-- Button to trigger popup -->
+<button class="popup-btn" onclick="openPopup()">Daily Tiffin Services</button>
+
+<!-- Popup Overlay -->
+<div id="dailyUpdateModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h1>Daily Tiffin Services</h1>
+        <form action="https://banjoscafe.in/process1.php" method="post" onsubmit="handleFormSubmission(event)">
             
+            <!-- Display Tiffin Service Details -->
+            <div class="form-group">
+                <h2>₹60 Tiffin</h2>
+                <p>Includes:</p>
+                <ul>
+                    <li>4 Chapatis</li>
+                    <li>Bhaji</li>
+                </ul>
+            </div>
+            
+            <!-- Price hidden input -->
+            <input type="hidden" name="price" id="price" value="60">
+            
+            <div class="form-group">
+                <label for="entered_password">Password (First 4 digits of Mobile No):</label>
+                <input type="password" id="entered_password" name="entered_password" required>
+            </div>
+            
+            <!-- Submit button -->
+            <button type="submit">Submit</button>
+            
+            <!-- View Records button -->
+            <button class="modal-close-btn" onclick="viewRecords()">View Records</button>
+        </form>
+    </div>
+</div>
+
+<!-- Records Modal -->
+<div id="recordsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeRecordsModal()">&times;</span>
+        <h2>Records</h2>
+        <div id="recordsContent">
+            <!-- Fetched records will be displayed here -->
+        </div>
+        <button class="modal-close-btn" onclick="closeRecordsModal()">Close</button>
+    </div>
+</div>
+
+<!-- Success Message Modal -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSuccessModal()">&times;</span>
+        <h2>Success!</h2>
+        <p>Record added successfully!</p>
+        <button class="modal-close-btn" onclick="closeSuccessModal()">Close</button>
+    </div>
+</div>
+
+<!-- Already Submitted Message Modal -->
+<div id="alreadySubmittedModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAlreadySubmittedModal()">&times;</span>
+        <h2>Warning</h2>
+        <p>You have already submitted data for this time of day and date.</p>
+        <button class="modal-close-btn" onclick="closeAlreadySubmittedModal()">Close</button>
+    </div>
+</div>
+
 
 
 
