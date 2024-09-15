@@ -147,6 +147,12 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+.dish-item1 {
+    width: 22%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
 .dish-item img {
     width: 100%;
     border-radius: 10px;
