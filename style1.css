@@ -310,8 +310,8 @@ nav ul li a:hover {
 }
    .hero-text {
     position: absolute;
-     top: 50%;
-    left: 50%;
+     top: 20%;
+    
   
     font-size: 0.6em;
     padding: 0 20px;
