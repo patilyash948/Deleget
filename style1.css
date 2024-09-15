@@ -155,11 +155,11 @@ nav ul li a:hover {
 }
 
 .dish-item1 img {
-    width: 100%;
+    width: 50%;
     border-radius: 10px;
 
 
-     max-width: 300px; /* Adjust the max width as needed */
+     max-width: 400px; /* Adjust the max width as needed */
     display: block;
     margin: 0 auto;
 }
