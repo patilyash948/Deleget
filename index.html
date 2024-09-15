@@ -478,12 +478,23 @@ function closeRecordsModal() {
         <span class="close" onclick="closeModal()">&times;</span>
         <h1>Daily Updates Form</h1>
         <form action="https://banjoscafe.in/process1.php" method="post" onsubmit="handleFormSubmission(event)">
+
+
+
+
+            
             <div class="form-group">
+
+
+<option value="Tiffin Services" data-morning="60" data-evening="60" data-password="1234">Tiffin Services (60 for 4 chapati)</option>
+
+
+                
                 <label for="name">Name:</label>
                  <select name="name" id="name" required onchange="updatePrice()">
                 <option value="" disabled selected>Select a name</option>
                  <option value="मोहन पाटील" data-morning="60" data-evening="60" data-password="8767">मोहन पाटील</option>
-                                <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60" data-password="">सुमित कुलकर्णी</option>
+                <option value="सुमित कुलकर्णी" data-morning="60" data-evening="60" data-password="">सुमित कुलकर्णी</option>
                 <option value="चेतन ढाके" data-morning="60" data-evening="60" data-password="8408">चेतन ढाके</option>
                 <option value="अजय साळुंखे" data-morning="60" data-evening="60" data-password="9545">अजय साळुंखे</option>
                 <option value="प्रतिक चौधरी" data-morning="60" data-evening="70" data-password="9421">प्रतिक चौधरी</option>
@@ -536,9 +547,6 @@ function closeRecordsModal() {
     </div>
             
             <input type="hidden" name="price" id="price" value="60">
-
-        
-
                    <div class="form-group">
                     <label for="entered_password">Password:(First 4 Digit of Mobile No)</label>
                     <input type="password" id="entered_password" name="entered_password" required>
