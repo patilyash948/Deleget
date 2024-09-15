@@ -303,7 +303,11 @@ nav ul li a:hover {
     .hero-image {
         height: 250px;
     }
-
+.hero-section {
+    position: relative;
+   
+    color: white;
+}
     .hero-text {
         top: 60%;
         font-size: 0.4em;
