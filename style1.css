@@ -312,8 +312,8 @@ nav ul li a:hover {
    top: 20%;
     left: 50%;
      
-  
-    font-size: 0.1em;
+   padding: 0 20px;
+    font-size: 0.5em;
     
 }
 
