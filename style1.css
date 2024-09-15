@@ -369,3 +369,114 @@ nav ul li a:hover {
         flex: 1;
     }
 }
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 400px) {
+    .search-section1 {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 22px;
+        right: 40px;
+        z-index: 1500;
+        color: #fff;
+        font-size: 1.5em;
+        margin-right: 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+.hero-section {
+  
+     
+    color: white;
+}
+   .hero-text {
+   top: 60%;
+    left: 50%;
+     transform: translate(-50%, -50%);
+   padding: 0 20px;
+    font-size: 0.9em;
+    
+}
+
+.dishes {
+        padding: 20px;
+        
+    }
+
+    .dishes h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .dish-grid {
+        display: flex;
+        flex-wrap: wrap;
+        
+        
+    }
+
+    .dish-item {
+        width: 40%; /* Set to almost full width */
+        
+    }
+
+    .dish-image {
+        width: 100%; /* Set width to 100% of the container */
+        height: auto; /* Let the height adjust automatically */
+        
+    }
+
+.dish-description h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+    .features-section {
+        padding: 20px;
+        background-color: #f0f0f0;
+        text-align: center;
+    }
+
+    .feature-item {
+        margin: 10px;
+        flex: 1;
+    }
+
+    .restaurants-section {
+        padding: 20px;
+    }
+
+    .restaurant {
+        margin: 10px;
+        flex: 1;
+    }
+}
