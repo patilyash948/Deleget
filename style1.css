@@ -108,7 +108,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero-section {
     position: relative;
- 
+    text-align: center;
     color: white;
 }
 
@@ -305,13 +305,18 @@ nav ul li a:hover {
     }
 .hero-section {
     position: relative;
-   
+      text-align: center;
     color: white;
 }
-    .hero-text {
-        top: 60%;
-        font-size: 0.4em;
-    }
+   .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8em;
+    padding: 0 20px;
+}
+
 .dishes {
         padding: 20px;
         
