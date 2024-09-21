@@ -425,9 +425,11 @@ nav ul li a:hover {
     </div>
 
     <script>
-        function toggleMobileMenu() {
-            const navMenu = document.getElementById('nav-menu');
-            navMenu.classList.toggle('active');
+         function toggleMobileMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+            const btn = document.querySelector('.mobile-menu-btn');
+            btn.classList.toggle('active');
         }
     </script>
     
