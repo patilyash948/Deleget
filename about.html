@@ -361,5 +361,28 @@
             document.getElementById('dailyUpdateModal').style.display = 'none';
         }
     </script>
+    <script>
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+            const btn = document.querySelector('.mobile-menu-btn');
+            btn.classList.toggle('active');
+        }
+
+        function toggleMenu(category) {
+            const menu = document.getElementById(category);
+            menu.classList.toggle('active');
+        }
+    function openWebsite() {
+        window.open('https://banjoscafe.in', '_blank');
+    }
+</script>
+    </script>
 </body>
 </html>
