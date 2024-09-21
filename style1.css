@@ -394,9 +394,9 @@ nav ul li a:hover {
 
 /* Responsive Styles */
 @media (max-width: 400px) {
-    .search-section1 {
+    /*.search-section1 {
         display: none;
-    }
+    }*/
 
     .mobile-menu-btn {
         display: block;
