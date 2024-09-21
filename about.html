@@ -7,10 +7,6 @@
     <link rel="icon" href="Untitled-1.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet" />
-    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
 
@@ -38,11 +34,7 @@
             height: 60px;
         }
 
-        .navbar .right {
-            display: flex;
-            gap: 20px;
-        }
-
+        /* Navigation Menu */
         nav ul {
             list-style: none;
             display: flex;
@@ -72,9 +64,38 @@
             color: #333;
         }
 
-        /* Mobile Menu Hidden by Default */
-        nav ul {
-            display: none;
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: #444;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero-text h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         /* Popup Modal */
@@ -88,6 +109,23 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .modal .close {
+            color: red;
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
         }
 
         /* Footer Section */
@@ -129,31 +167,10 @@
             text-decoration: underline;
         }
 
-
-        
-        /* Responsive Mobile Styles */
+        /* Mobile View Styling */
         @media (max-width: 768px) {
-
-            .nav {
+            nav ul {
                 display: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-            }
-       .mobile-menu-btn {
-        display: block;
-        position: absolute;
-        top: 22px;
-        right: 40px;
-        z-index: 1500;
-        color: #fff;
-        font-size: 1.5em;
-        margin-right: 20px;
-    }
-
-            /* Toggle Menu Display on Active */
-            nav ul.active {
-                display: flex;
                 flex-direction: column;
                 position: absolute;
                 top: 60px;
@@ -164,45 +181,32 @@
                 z-index: 1000;
             }
 
+            nav ul.active {
+                display: flex;
+            }
+
             nav ul li {
                 text-align: center;
                 margin: 10px 0;
             }
-            
-          .about-section {
-    background-color: #f8f8f8; /* Light grey background */
-    padding: 60px 20px; /* Adequate padding */
-    text-align: center;
-    border-radius: 10px; /* Rounded corners for a soft design */
-}
 
-.about-section h2 {
-    font-size: 36px; /* Eye-catching title size */
-    margin-bottom: 20px;
-    color: #333333; /* Dark title color for contrast */
-    text-transform: uppercase;
-}
-
-.about-section p {
-    font-size: 18px; /* Paragraph font size for readability */
-    color: #555555; /* Softer text color */
-    line-height: 1.8; /* Spacious text for easy reading */
-    margin-bottom: 20px;
-}
-
-.about-section .container {
-    max-width: 800px; /* Centralized content with a max width */
-    margin: 0 auto;
-}
-
-.about-section p:last-child {
-    margin-bottom: 0; /* Remove last margin for cleaner look */
-}
-
-
-
-            
+            .mobile-menu-btn {
+                display: block;
+                cursor: pointer;
+            }
         }
+
+        /* Desktop View Styling */
+        @media (min-width: 769px) {
+            nav ul {
+                display: flex; /* Always visible on desktop */
+            }
+
+            .mobile-menu-btn {
+                display: none; /* Hide the mobile menu button on desktop */
+            }
+        }
+
     </style>
 </head>
 
@@ -210,13 +214,10 @@
 
     <!-- Navbar Section -->
     <header class="navbar">
-        <div class="left">
-            <a href="#home" class="logo">
-                <img src="deleget11.png" alt="Logo">
-            </a>
-        </div>
+        <a href="#home" class="logo">
+            <img src="deleget11.png" alt="Logo">
+        </a>
         <div class="right">
-            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
             <nav>
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
@@ -228,6 +229,7 @@
                     <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
         </div>
     </header>
 
@@ -235,8 +237,8 @@
         <div class="container">
             <h2>About Us</h2>
             <p>At Deleget, we believe that good food should be accessible to everyone, anytime, anywhere. We are revolutionizing the way students, working professionals, and local communities enjoy their meals by connecting them with their favorite restaurants and cuisines.</p>
-        <p>Our mission is to make food delivery fast, affordable, and enjoyable, providing a variety of nutritious, delicious options right at your doorstep. With a strong focus on local specialties, we cater to diverse tastes while ensuring top-notch quality and convenience.</p>
-        <p>Whether you’re craving a quick snack, a hearty meal, or something new to try, we’re here to deliver — literally and figuratively. Let us take care of your food needs, so you can focus on what matters most to you.</p>
+            <p>Our mission is to make food delivery fast, affordable, and enjoyable, providing a variety of nutritious, delicious options right at your doorstep. With a strong focus on local specialties, we cater to diverse tastes while ensuring top-notch quality and convenience.</p>
+            <p>Whether you’re craving a quick snack, a hearty meal, or something new to try, we’re here to deliver — literally and figuratively. Let us take care of your food needs, so you can focus on what matters most to you.</p>
         </div>
     </section>
 
@@ -249,7 +251,7 @@
                 <li><a href="#">Terms of Service</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
-            <p>Designed by <a href="https://www.skyoud.com" target="_blank">Skyoud Technologies</a></p>
+            <p>Designed and animated by <a href="https://www.skyoud.com" target="_blank">Skyoud Technologies</a></p>
         </div>
     </footer>
 
@@ -257,6 +259,8 @@
         function toggleMobileMenu() {
             const menu = document.querySelector('nav ul');
             menu.classList.toggle('active');
+            const btn = document.querySelector('.mobile-menu-btn');
+            btn.classList.toggle('active');
         }
     </script>
 
