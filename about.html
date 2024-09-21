@@ -7,17 +7,15 @@
     <link rel="icon" href="Untitled-1.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet" />
-    
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
 
     <style>
-          body {
+        body {
             font-family: 'Mulish', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -28,33 +26,16 @@
 
         /* Navbar */
         .navbar {
-           background-color: white; /* Fully white background */
-    color: black; /* Default color for text */
+            background-color: white; /* Fully white background */
+            color: black; /* Default color for text */
             padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.right {
-    display: flex;
-    align-items: center;
-}
-
         .navbar .logo img {
             height: 60px;
-        }
-
-        .navbar .location-div {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 16px;
         }
 
         .navbar .right {
@@ -62,94 +43,38 @@
             gap: 20px;
         }
 
-
-
-
         nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-right: 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-nav ul li a:hover {
-    color: #ff5722;
-}
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-}   
-
-
-
-
-
-        
-
-        .navbar nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
             margin: 0;
             padding: 0;
         }
 
-        .navbar nav ul li {
-            display: inline;
+        nav ul li {
+            margin-right: 15px;
         }
 
-        .navbar nav ul li a {
-            color: black;
+        nav ul li a {
             text-decoration: none;
-            font-weight: bold;
+            color: #333;
+            font-size: 16px;
         }
 
-        /* Main Content */
-        .hero-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            background-color: #444;
-            color: white;
-            text-align: center;
+        nav ul li a:hover {
+            color: #ff5722;
         }
 
-        .hero-section img {
-            max-width: 100%;
-            height: auto;
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
         }
 
-        .hero-text h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        /* Mobile Menu Hidden by Default */
+        nav ul {
+            display: none;
         }
 
         /* Popup Modal */
@@ -165,187 +90,73 @@ nav ul li a:hover {
             background-color: rgba(0, 0, 0, 0.5);
         }
 
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 8px;
+        /* Footer Section */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
         }
 
-        .modal .close {
-            color: red;
-            float: right;
-            font-size: 28px;
-            cursor: pointer;
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            cursor: pointer;
+        .footer-links li {
+            margin: 0 10px;
         }
 
-/* Footer Section */
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-.footer-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
+        .footer-links li a:hover {
+            text-decoration: underline;
+        }
 
-.footer-links li {
-    margin: 0 10px;
-}
+        /* Specific styling for Skyoud Technologies link */
+        .footer-content p a {
+            color: #00FF00; /* Green color */
+        }
 
-.footer-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-}
+        .footer-content p a:hover {
+            text-decoration: underline;
+        }
 
-.footer-links li a:hover {
-    text-decoration: underline;
-}
-
-/* Specific styling for Skyoud Technologies link */
-.footer-content p a {
-    color: #00FF00; /* Green color */
-}
-
-.footer-content p a:hover {
-    text-decoration: underline;
-}
-
-
- 
-@media (max-width: 400px) {
-    .search-section1 {
-        display: none;
-    }
-
-     .mobile-menu-btn {
-        display: block;
-        position: absolute;
-        top: 22px;
-        right: 40px;
-        z-index: 1500;
-        color: #fff;
-        font-size: 1.5em;
-        margin-right: 20px;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        padding: 10px 0;
-        z-index: 1000;
-    }
-
-  nav ul.active {
-        display: flex;
-    } 
-    nav ul li {
-        text-align: center;
-        margin: 10px 0;
-    } 
-
-
-
-
-}
-        
-      
-
-       
-
+        /* Responsive Mobile Styles */
         @media (max-width: 768px) {
-            .search-section1 {
-        display: none;
-    }
-
             .mobile-menu-btn {
-        display: block;
-        position: absolute;
-        top: 22px;
-        right: 40px;
-        z-index: 1500;
-        color: #fff;
-        font-size: 1.5em;
-        margin-right: 20px;
-    }
+                display: block;
+                position: absolute;
+                top: 22px;
+                right: 40px;
+                font-size: 1.5em;
+                color: #333;
+            }
 
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        padding: 10px 0;
-        z-index: 1000;
-    }
+            /* Toggle Menu Display on Active */
+            nav ul.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 10px 0;
+                z-index: 1000;
+            }
 
-  nav ul.active {
-        display: flex;
-    }
-
-    nav ul li {
-        text-align: center;
-        margin: 10px 0;
-    } 
-
-
-
-
-          .about-section {
-    background-color: #f8f8f8; /* Light grey background */
-    padding: 60px 20px; /* Adequate padding */
-    text-align: center;
-    border-radius: 10px; /* Rounded corners for a soft design */
-}
-
-.about-section h2 {
-    font-size: 36px; /* Eye-catching title size */
-    margin-bottom: 20px;
-    color: #333333; /* Dark title color for contrast */
-    text-transform: uppercase;
-}
-
-.about-section p {
-    font-size: 18px; /* Paragraph font size for readability */
-    color: #555555; /* Softer text color */
-    line-height: 1.8; /* Spacious text for easy reading */
-    margin-bottom: 20px;
-}
-
-.about-section .container {
-    max-width: 800px; /* Centralized content with a max width */
-    margin: 0 auto;
-}
-
-.about-section p:last-child {
-    margin-bottom: 0; /* Remove last margin for cleaner look */
-}
-
-
-  
+            nav ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -358,34 +169,9 @@ nav ul li a:hover {
             <a href="#home" class="logo">
                 <img src="deleget11.png" alt="Logo">
             </a>
-            <!-- <div class="location-div">
-                <span class="other">Other</span>
-                <span class="location">Pune, India</span>
-                <span class="arrow-down"><i class="fa-solid fa-angle-down"></i></span>
-            </div> -->
         </div>
         <div class="right">
-            <div class="search-section1">
-                <input type="text" placeholder="Search for restaurants or dishes">
-                <button class="search-btn"><i class="fa fa-search"></i></button>
-            </div>
-
-            <!-- <nav id="nav-menu">
-                        <ul class="items">
-                            <li><a href="index.html#home">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="Gallery.html">Gallery</a></li>
-                            <li><a href="Career.html">Career</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="SignUp.html">Signup</a></li>
-                            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </nav> -->
-
-
-
-
-            
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
             <nav>
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
@@ -397,44 +183,35 @@ nav ul li a:hover {
                     <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>
-                    
-                    <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
-                </div>
-            </div>
-        </header>
+        </div>
+    </header>
 
     <section id="about" class="about-section">
-    <div class="container">
-        <h2>About Us</h2>
-        <p>At Deleget, we believe that good food should be accessible to everyone, anytime, anywhere. We are revolutionizing the way students, working professionals, and local communities enjoy their meals by connecting them with their favorite restaurants and cuisines.</p>
-        <p>Our mission is to make food delivery fast, affordable, and enjoyable, providing a variety of nutritious, delicious options right at your doorstep. With a strong focus on local specialties, we cater to diverse tastes while ensuring top-notch quality and convenience.</p>
-        <p>Whether you’re craving a quick snack, a hearty meal, or something new to try, we’re here to deliver — literally and figuratively. Let us take care of your food needs, so you can focus on what matters most to you.</p>
-    </div>
-</section>
-<!-- Footer Section -->
-            <footer class="footer">
-                <div class="footer-content">
-                    <p>&copy; 2024 Deleget. All rights reserved.</p>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                    <p>Designed and animated by <a href="https://www.skyoud.com" target="_blank">Skyoud Technologies</a></p>
-                </div>
-            </footer>
-        </main>
-    </div>
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At Deleget, we believe that good food should be accessible to everyone, anytime, anywhere...</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Deleget. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <p>Designed by <a href="https://www.skyoud.com" target="_blank">Skyoud Technologies</a></p>
+        </div>
+    </footer>
 
     <script>
-         function toggleMobileMenu() {
+        function toggleMobileMenu() {
             const menu = document.querySelector('nav ul');
             menu.classList.toggle('active');
-            const btn = document.querySelector('.mobile-menu-btn');
-            btn.classList.toggle('active');
         }
     </script>
-    
 
 </body>
 </html>
